@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apna Oil Mill | Mustard Oil, Khal, Rice &amp; Seed Trading — Bigrau, Siyana</title>
+<meta name="description" content="Apna Oil Mill — pure mustard oil, khal, rice processing, and mustard seed trading from Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, Uttar Pradesh. Proprietor: Mr. Kiranpal Singh. Delivery within Bulandshahr district only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hind:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     WELCOME POPUP MODAL (User Attraction)
+============================================================ -->
+<div class="site-popup-overlay" id="welcomePopup" hidden>
+  <div class="site-popup-card">
+    <button type="button" class="popup-close-btn" onclick="closeWelcomePopup()">&times;</button>
+    <div class="popup-icon">🌾</div>
+    <h3 class="i18n" data-en="Welcome to Apna Oil Mill!" data-hi="अपना ऑयल मिल में आपका स्वागत है!">Welcome to Apna Oil Mill!</h3>
+    <p class="i18n" 
+      data-en="Pure &amp; Fresh Sarso Oil, Khal, and Mill Trading straight from Bigrau, Siyana. Explore our services or connect instantly via WhatsApp!" 
+      data-hi="बिगराउ, सियाना से सीधा शुद्ध और ताज़ा सरसों का तेल, खल और अनाज व्यापार। हमारे उत्पादों को देखें या व्हाट्सएप पर सीधे संपर्क करें!">
+      Pure &amp; Fresh Sarso Oil, Khal, and Mill Trading straight from Bigrau, Siyana. Explore our services or connect instantly via WhatsApp!
+    </p>
+    <button type="button" class="btn btn-primary full" onclick="closeWelcomePopup()">
+      <span class="i18n" data-en="Explore Products" data-hi="उत्पाद देखें">Explore Products</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================
+     THANK YOU / EXIT POPUP MODAL
+============================================================ -->
+<div class="site-popup-overlay" id="thankyouPopup" hidden>
+  <div class="site-popup-card">
+    <button type="button" class="popup-close-btn" onclick="closeThankyouPopup()">&times;</button>
+    <div class="popup-icon">🙏</div>
+    <h3 class="i18n" data-en="Thank You for Visiting!" data-hi="पधारने के लिए धन्यवाद!">Thank You for Visiting!</h3>
+    <p class="i18n" 
+      data-en="We hope you had a great experience. Welcome back anytime to Apna Oil Mill, Bigrau!" 
+      data-hi="हमें उम्मीद है आपका अनुभव अच्छा रहा। अपना ऑयल मिल, बिगराउ में आपका दोबारा स्वागत है!">
+      We hope you had a great experience. Welcome back anytime to Apna Oil Mill, Bigrau!
+    </p>
+    <a href="https://wa.me/919456603818?text=Hi%20Apna%20Oil%20Mill%2C%20I%20visited%20your%20website." target="_blank" rel="noopener" class="btn btn-whatsapp full">
+      <span class="i18n" data-en="Chat on WhatsApp" data-hi="व्हाट्सएप पर चैट करें">Chat on WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER / NAVIGATION
+============================================================ -->
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#top">
+    <span class="brand-logo" aria-hidden="true">
+      <svg viewBox="0 0 64 68" width="42" height="45">
+        <defs>
+          <linearGradient id="goldGradHeader" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F3E6B8"/>
+            <stop offset="55%" stop-color="#C9A227"/>
+            <stop offset="100%" stop-color="#8C6C16"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 2 L58 10 V34 C58 50 47 60 32 65 C17 60 6 50 6 34 V10 Z" fill="#0B4D3B" stroke="url(#goldGradHeader)" stroke-width="2.2"/>
+        <path d="M32 7 L53 13.5 V34 C53 47 44 55.5 32 60 C20 55.5 11 47 11 34 V13.5 Z" fill="none" stroke="url(#goldGradHeader)" stroke-width="0.6" opacity="0.55"/>
+        <g stroke="url(#goldGradHeader)" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.9">
+          <path d="M13 30c2.5 2.6 2.5 6.8 0 10M13 34.5c3.2 0.8 5.8 -0.8 7.4 -3.3M13 39.5c3.2 0.8 5.8 -0.8 7.4 -3.3"/>
+          <path d="M51 30c-2.5 2.6 -2.5 6.8 0 10M51 34.5c-3.2 0.8 -5.8 -0.8 -7.4 -3.3M51 39.5c-3.2 0.8 -5.8 -0.8 -7.4 -3.3"/>
+        </g>
+        <path d="M32 13c2 2.6 3.5 4.6 3.5 7a3.5 3.5 0 1 1 -7 0c0 -2.4 1.5 -4.4 3.5 -7Z" fill="url(#goldGradHeader)"/>
+        <text x="32" y="43" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" font-weight="700" fill="#F3E6B8">AOM</text>
+        <rect x="14" y="49" width="36" height="10" rx="2" fill="url(#goldGradHeader)"/>
+        <text x="32" y="56.3" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="5.2" letter-spacing="1.3" font-weight="700" fill="#0B4D3B">EST. SIYANA</text>
+      </svg>
+    </span>
+    <span class="brand-text">
+      <span class="brand-name">Apna Oil Mill</span>
+      <span class="brand-tagline i18n" data-en="Oil Mill &amp; Trading · Bigrau" data-hi="तेल मिल और व्यापार · बिगराउ">Oil Mill &amp; Trading · Bigrau</span>
+    </span>
+  </a>
+  <nav id="mainNav">
+    <a href="#products" class="nav-link i18n" data-en="Our Products" data-hi="हमारे उत्पाद">Our Products</a>
+    <a href="#seed-trade" class="nav-link i18n" data-en="Buy / Sell Seed" data-hi="सरसों खरीदें/बेचें">Buy / Sell Seed</a>
+    <a href="#pilai" class="nav-link i18n" data-en="Custom Oil Pressing" data-hi="पिसाई सेवा">Custom Oil Pressing</a>
+    <a href="#payment" class="nav-link i18n" data-en="Advance Payment" data-hi="एडवांस पेमेंट">Advance Payment</a>
+    <a href="#location" class="nav-link i18n" data-en="Location" data-hi="स्थान">Location</a>
+    <a href="#mill" class="nav-link i18n" data-en="About the Mill" data-hi="मिल के बारे में">About the Mill</a>
+    <a href="#developer" class="nav-link i18n" data-en="Meet the Developer" data-hi="डेवलपर से मिलें">Meet the Developer</a>
+    <a href="#contact" class="nav-cta i18n" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a>
+    <div class="lang-toggle" role="group" aria-label="Choose language">
+      <button type="button" class="lang-btn active" data-lang-btn="en" onclick="setLanguage('en')">EN</button>
+      <button type="button" class="lang-btn" data-lang-btn="hi" onclick="setLanguage('hi')">हिं</button>
+    </div>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#products" class="nav-link i18n" data-en="Our Products" data-hi="हमारे उत्पाद">Our Products</a>
+  <a href="#seed-trade" class="nav-link i18n" data-en="Buy / Sell Seed" data-hi="सरसों खरीदें/बेचें">Buy / Sell Seed</a>
+  <a href="#pilai" class="nav-link i18n" data-en="Custom Oil Pressing" data-hi="पिसाई सेवा">Custom Oil Pressing</a>
+  <a href="#payment" class="nav-link i18n" data-en="Advance Payment" data-hi="एडवांस पेमेंट">Advance Payment</a>
+  <a href="#location" class="nav-link i18n" data-en="Location" data-hi="स्थान">Location</a>
+  <a href="#mill" class="nav-link i18n" data-en="About the Mill" data-hi="मिल के बारे में">About the Mill</a>
+  <a href="#developer" class="nav-link i18n" data-en="Meet the Developer" data-hi="डेवलपर से मिलें">Meet the Developer</a>
+  <a href="#contact" class="i18n" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a>
+  <div class="lang-toggle mobile" role="group" aria-label="Choose language">
+    <button type="button" class="lang-btn active" data-lang-btn="en" onclick="setLanguage('en')">English</button>
+    <button type="button" class="lang-btn" data-lang-btn="hi" onclick="setLanguage('hi')">हिंदी</button>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text reveal-in">
+      <p class="eyebrow i18n" data-en="Trusted Mustard Oil Merchants — Bigrau, Siyana, Bulandshahr" data-hi="भरोसेमंद सरसों तेल व्यापारी — बिगराउ, सियाना, बुलंदशहर">Trusted Mustard Oil Merchants — Bigrau, Siyana, Bulandshahr</p>
+      <h1 class="i18n" data-en="Pure Mustard Oil, Khal, Rice &amp; Seed Trading" data-hi="शुद्ध सरसों का तेल, खल, चावल और अनाज व्यापार">Pure Mustard Oil, Khal, Rice &amp; Seed Trading</h1>
+      <p class="lede i18n"
+        data-en="Apna Oil Mill has supplied pure, cold-pressed mustard oil and quality mustard seed to families and traders across the region. Led by Proprietor Mr. Kiranpal Singh, the mill continues to operate on the values it was founded on — purity, honest measure, and fair trade."
+        data-hi="अपना ऑयल मिल कई सालों से शुद्ध, कच्ची घानी सरसों का तेल और अच्छी सरसों बुलंदशहर के लोगों और व्यापारियों को दे रही है। मालिक श्री किरणपाल सिंह जी की देखरेख में मिल आज भी उन्हीं सिद्धांतों पर चलती है — शुद्धता, सही तोल और ईमानदार व्यापार।">
+        Apna Oil Mill has supplied pure, cold-pressed mustard oil and quality mustard seed to families and traders across the region. Led by Proprietor Mr. Kiranpal Singh, the mill continues to operate on the values it was founded on — purity, honest measure, and fair trade.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary i18n" data-en="Enquire / Bulk Order" data-hi="ऑर्डर के लिए पूछें">Enquire / Bulk Order</a>
+        <a href="https://wa.me/919456603818?text=Hi%20Apna%20Oil%20Mill%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+           target="_blank" rel="noopener" class="btn btn-whatsapp wa-link"
+           data-wa-phone="919456603818"
+           data-wa-en="Hi Apna Oil Mill! I would like to enquire about your products."
+           data-wa-hi="नमस्ते अपना ऑयल मिल! मुझे आपके उत्पादों के बारे में जानकारी चाहिए।">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.13c-.22.62-1.28 1.19-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.86-.27-1.48-.53-2.6-1.12-4.3-3.74-4.43-3.92-.13-.18-1.06-1.41-1.06-2.69 0-1.28.67-1.91.9-2.17.22-.26.5-.32.67-.32.16 0 .33 0 .47.01.15.01.36-.06.56.43.22.53.74 1.83.8 1.96.06.13.1.29.02.47-.08.18-.13.29-.25.44-.13.16-.27.35-.38.47-.13.13-.26.27-.11.53.15.26.67 1.1 1.44 1.78 1 .88 1.83 1.16 2.09 1.29.26.13.42.11.57-.06.16-.18.66-.76.83-1.02.18-.26.35-.22.6-.13.24.09 1.55.73 1.82.86.26.13.44.19.5.3.06.13.06.71-.16 1.33z"/></svg>
+          <span class="i18n" data-en="WhatsApp Us" data-hi="व्हाट्सएप पर मैसेज करें">WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="hero-visual reveal-in has-photo">
+      <div class="hero-photo" id="heroSlider" aria-label="Apna Oil Mill photos">
+      <div class="hero-slides">
+        <figure class="hero-slide active"><img src="images/hero.jpg" alt="Fresh mustard oil being poured for a customer at Apna Oil Mill" width="1000" height="625"><figcaption class="hero-cap i18n" data-en="Fresh Oil, Honest Weight" data-hi="ताज़ा तेल, सही तोल">Fresh Oil, Honest Weight</figcaption></figure>
+        <figure class="hero-slide"><img src="images/product-oil.jpg" alt="Pure golden mustard oil in a glass bottle with mustard flowers" width="1000" height="625"><figcaption class="hero-cap i18n" data-en="Pure Cold-Pressed Mustard Oil" data-hi="शुद्ध कच्ची घानी सरसों का तेल">Pure Cold-Pressed Mustard Oil</figcaption></figure>
+        <figure class="hero-slide" data-pos="left"><img src="images/product-seed.jpg" alt="Cleaned and graded mustard seed in a brass scoop" width="1000" height="625"><figcaption class="hero-cap i18n" data-en="Cleaned &amp; Graded Mustard Seed" data-hi="साफ और छाँटी हुई सरसों">Cleaned &amp; Graded Mustard Seed</figcaption></figure>
+        <figure class="hero-slide"><img src="images/product-khal.jpg" alt="Mustard oil cake (khal) blocks with mustard seed" width="1000" height="625"><figcaption class="hero-cap i18n" data-en="Nutrient-Rich Khal" data-hi="पोषण से भरपूर खल">Nutrient-Rich Khal</figcaption></figure>
+        <figure class="hero-slide" data-pos="left"><img src="images/product-rice.jpg" alt="Polished rice pile with a brass scoop" width="1000" height="625"><figcaption class="hero-cap i18n" data-en="Polished Rice" data-hi="पॉलिश चावल">Polished Rice</figcaption></figure>
+        <figure class="hero-slide"><img src="images/seed-farmer.jpg" alt="Traditional weighing scale and mustard seed sacks at the mill" width="1000" height="625"><figcaption class="hero-cap i18n" data-en="Honest Weight, Every Time" data-hi="हर बार पूरा तोल">Honest Weight, Every Time</figcaption></figure>
+      </div>
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
+      <div class="seal">
+        <svg viewBox="0 0 200 200" width="230" height="230">
+          <defs>
+            <linearGradient id="sealGoldGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F3E6B8"/>
+              <stop offset="55%" stop-color="#C9A227"/>
+              <stop offset="100%" stop-color="#8C6C16"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="1.3" stroke-dasharray="1 5" opacity="0.55"/>
+          <circle cx="100" cy="100" r="64" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path id="sealArcTop" d="M 20 100 A 80 80 0 0 1 180 100" fill="none"/>
+          <path id="sealArcBottom" d="M 180 100 A 80 80 0 0 1 20 100" fill="none"/>
+          <text font-size="14.5" letter-spacing="2.5" font-weight="600" fill="currentColor">
+            <textPath href="#sealArcTop" startOffset="50%" text-anchor="middle">APNA OIL MILL</textPath>
+          </text>
+          <text font-size="11.5" letter-spacing="3.5" font-weight="600" fill="currentColor">
+            <textPath href="#sealArcBottom" startOffset="50%" text-anchor="middle">GUARANTEED PURITY</textPath>
+          </text>
+          <text x="100" y="88" font-size="12.5" text-anchor="middle" fill="currentColor" letter-spacing="2" opacity="0.85">EST. SIYANA</text>
+          <text x="100" y="124" font-size="34" text-anchor="middle" fill="url(#sealGoldGrad)" font-weight="700" font-family="Cormorant Garamond, serif">Shuddh</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST & PURITY GUARANTEE BANNER -->
+  <section class="purity-banner reveal">
+    <div class="purity-banner-inner">
+      <span class="purity-icon" aria-hidden="true">🛡️</span>
+      <p class="i18n"
+        data-en="100% Pure. Zero Chemicals. Honest Weight, Guaranteed — Trusted Across Generations in Bigrau."
+        data-hi="100% शुद्ध। कोई केमिकल नहीं। पूरा तोल, गारंटी के साथ — बिगराउ में पीढ़ियों से भरोसा।">
+        100% Pure. Zero Chemicals. Honest Weight, Guaranteed — Trusted Across Generations in Bigrau.
+      </p>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="strip">
+    <div class="strip-item reveal">
+      <strong class="i18n" data-en="Established Trade" data-hi="पुराना व्यापार">Established Trade</strong>
+      <span class="i18n" data-en="Bigrau, Siyana" data-hi="बिगराउ, सियाना">Bigrau, Siyana</span>
+    </div>
+    <div class="strip-item reveal">
+      <strong class="i18n" data-en="Direct Sourcing" data-hi="सीधी खरीद">Direct Sourcing</strong>
+      <span class="i18n" data-en="farm-sourced seed" data-hi="खेत से सीधा अनाज">farm-sourced seed</span>
+    </div>
+    <div class="strip-item reveal">
+      <strong class="i18n" data-en="Wholesale &amp; Retail" data-hi="थोक और खुदरा">Wholesale &amp; Retail</strong>
+      <span class="i18n" data-en="quantities available" data-hi="दोनों उपलब्ध">quantities available</span>
+    </div>
+    <div class="strip-item delivery-highlight reveal">
+      <strong class="i18n" data-en="Local Delivery Only" data-hi="केवल स्थानीय डिलीवरी">Local Delivery Only</strong>
+      <span class="i18n" data-en="within Bulandshahr district" data-hi="सिर्फ बुलंदशहर जिले में">within Bulandshahr district</span>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <section class="ticker-section">
+    <div class="ticker-track" id="tickerTrack" aria-label="Today's product offerings"></div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="section scroll-spy-target" id="products">
+    <p class="eyebrow center i18n" data-en="Our Products &amp; Trade" data-hi="हमारे उत्पाद">Our Products &amp; Trade</p>
+    <h2 class="i18n" data-en="What We Mill and Trade" data-hi="हम क्या बनाते और बेचते हैं">What We Mill and Trade</h2>
+    <div class="product-grid">
+
+      <article class="product-card has-photo featured reveal">
+        <div class="card-photo" data-emoji="🛢️"><img src="images/product-oil.jpg" alt="Pure cold-pressed mustard oil in glass bottle" width="1000" height="625" loading="lazy" onerror="this.parentElement.classList.add('no-photo')"></div>
+        <span class="tag i18n" data-en="Best Seller" data-hi="सबसे ज़्यादा बिकने वाला">Best Seller</span>
+        <h3 class="i18n" data-en="Pure Mustard Oil" data-hi="शुद्ध सरसों का तेल">Pure Mustard Oil</h3>
+        <p class="i18n"
+          data-en="Pure, cold-pressed mustard oil with its natural pungency and aroma intact — no refining, no blending, no shortcuts."
+          data-hi="बिना मिलावट के, कच्ची घानी में निकाला गया शुद्ध सरसों का तेल — जिसमें तेल की असली महक और तीखापन बना रहता है।">
+          Pure, cold-pressed mustard oil with its natural pungency and aroma intact — no refining, no blending, no shortcuts.
+        </p>
+        <ul class="feat-list">
+          <li class="i18n" data-en="Cold-pressed, unrefined" data-hi="कच्ची घानी से निकाला गया">Cold-pressed, unrefined</li>
+          <li class="i18n" data-en="Natural colour &amp; aroma" data-hi="असली रंग और खुशबू">Natural colour &amp; aroma</li>
+          <li class="i18n" data-en="Packed fresh to order" data-hi="ऑर्डर पर ताज़ा पैकिंग">Packed fresh to order</li>
+        </ul>
+
+        <div class="shelf-life-box">
+          <div class="shelf-life-header">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            <span class="i18n" data-en="Shelf Life &amp; Quality" data-hi="शेल्फ लाइफ और गुणवत्ता">Shelf Life &amp; Quality</span>
+          </div>
+          <ul class="shelf-life-list">
+            <li class="i18n"
+              data-en="Our 100% Pure Mustard Oil stays naturally fresh for a long time."
+              data-hi="हमारा 100% शुद्ध सरसों का तेल स्वाभाविक रूप से लंबे समय तक ताज़ा रहता है।">
+              Our 100% Pure Mustard Oil stays naturally fresh for a long time.
+            </li>
+            <li class="i18n"
+              data-en="Stored correctly — in a cool, dark place, in an airtight container — it holds its freshness and flavour for 12 to 18 months."
+              data-hi="सही तरीके से स्टोर करने पर (ठंडी, अंधेरी जगह और एयरटाइट डिब्बे में) यह तेल 12 से 18 महीने तक अपनी ताज़गी और स्वाद बनाए रखता है।">
+              Stored correctly — in a cool, dark place, in an airtight container — it holds its freshness and flavour for 12 to 18 months.
+            </li>
+            <li class="i18n"
+              data-en="It contains natural antioxidants and pungency that extend its shelf life on their own — with no chemical preservatives added."
+              data-hi="इसमें प्राकृतिक एंटीऑक्सीडेंट और तीखापन होता है जो बिना किसी केमिकल प्रेसरवेटिव के इसकी शेल्फ लाइफ को स्वाभाविक रूप से बढ़ाता है।">
+              It contains natural antioxidants and pungency that extend its shelf life on their own — with no chemical preservatives added.
+            </li>
+          </ul>
+        </div>
+      
+        <div class="cart-add" data-cart-add data-product="oil"></div>
+      </article>
+
+      <article class="product-card has-photo reveal">
+        <div class="card-photo" data-emoji="🐄"><img src="images/product-khal.jpg" alt="Mustard oil cake (khal) for cattle feed" width="1000" height="625" loading="lazy" onerror="this.parentElement.classList.add('no-photo')"></div>
+        <span class="tag i18n" data-en="Cattle Feed" data-hi="पशु आहार">Cattle Feed</span>
+        <h3 class="i18n" data-en="Mustard Oil Cake (Khal)" data-hi="सरसों की खल">Mustard Oil Cake (Khal)</h3>
+        <p class="i18n"
+          data-en="Nutrient-rich mustard cake, a trusted protein feed for dairy cattle and buffalo across the region."
+          data-hi="पोषण से भरपूर सरसों की खल, जो दूध देने वाले पशुओं के लिए बहुत फायदेमंद मानी जाती है।">
+          Nutrient-rich mustard cake, a trusted protein feed for dairy cattle and buffalo across the region.
+        </p>
+        <ul class="feat-list">
+          <li class="i18n" data-en="High protein content" data-hi="ज़्यादा प्रोटीन">High protein content</li>
+          <li class="i18n" data-en="Supports milk yield" data-hi="दूध बढ़ाने में मददगार">Supports milk yield</li>
+          <li class="i18n" data-en="Sold by the quintal &amp; mun (40 kg)" data-hi="क्विंटल और मन (40 किलो) में बिक्री">Sold by the quintal &amp; mun (40 kg)</li>
+        </ul>
+      
+        <div class="cart-add" data-cart-add data-product="khal"></div>
+      </article>
+
+      <article class="product-card has-photo reveal">
+        <div class="card-photo" data-emoji="🌾"><img src="images/product-seed.jpg" alt="Cleaned and graded mustard seed" width="1000" height="625" loading="lazy" onerror="this.parentElement.classList.add('no-photo')"></div>
+        <span class="tag i18n" data-en="Trading" data-hi="व्यापार">Trading</span>
+        <h3 class="i18n" data-en="Mustard Seed Trading" data-hi="सरसों का व्यापार">Mustard Seed Trading</h3>
+        <p class="i18n"
+          data-en="Cleaned and graded mustard seed bought and sold in bulk for traders, processors, and other mills."
+          data-hi="साफ और छाँटी हुई सरसों, थोक में व्यापारियों और अन्य मिलों को बेची और खरीदी जाती है।">
+          Cleaned and graded mustard seed bought and sold in bulk for traders, processors, and other mills.
+        </p>
+        <ul class="feat-list">
+          <li class="i18n" data-en="Cleaned &amp; graded seed" data-hi="साफ और छाँटा हुआ अनाज">Cleaned &amp; graded seed</li>
+          <li class="i18n" data-en="Wholesale trading" data-hi="थोक व्यापार">Wholesale trading</li>
+          <li class="i18n" data-en="Sold by the quintal &amp; mun (40 kg)" data-hi="क्विंटल और मन (40 किलो) में बिक्री">Sold by the quintal &amp; mun (40 kg)</li>
+        </ul>
+      
+        <div class="cart-add" data-cart-add data-product="seed"></div>
+      </article>
+
+      <article class="product-card has-photo reveal">
+        <div class="card-photo" data-emoji="🍚"><img src="images/product-rice.jpg" alt="Polished rice from our rice mill" width="1000" height="625" loading="lazy" onerror="this.parentElement.classList.add('no-photo')"></div>
+        <span class="tag tag-new i18n" data-en="New Service" data-hi="नई सेवा">New Service</span>
+        <h3 class="i18n" data-en="Rice Milling, Polishing &amp; Trading" data-hi="चावल प्रोसेसिंग और व्यापार">Rice Milling, Polishing &amp; Trading</h3>
+        <p class="i18n"
+          data-en="We process paddy into rice — husking (chuukar utaarna) and polishing — and also buy and sell polished rice and rice husk/bran (chuukar) in bulk."
+          data-hi="हम धान से चावल निकालते हैं — चूकर उतारकर पॉलिश करते हैं — और पॉलिश चावल व चूकर/भूसी की खरीद-बिक्री भी करते हैं।">
+          We process paddy into rice — husking (chuukar utaarna) and polishing — and also buy and sell polished rice and rice husk/bran (chuukar) in bulk.
+        </p>
+        <ul class="feat-list">
+          <li class="i18n" data-en="Paddy husking (chuukar utaarna)" data-hi="धान से चूकर उतारना">Paddy husking (chuukar utaarna)</li>
+          <li class="i18n" data-en="Rice polishing service" data-hi="चावल पॉलिश सेवा">Rice polishing service</li>
+          <li class="i18n" data-en="Polished rice &amp; husk (chuukar) trading" data-hi="पॉलिश चावल व चूकर व्यापार">Polished rice &amp; husk (chuukar) trading</li>
+          <li class="i18n" data-en="Sold by the quintal &amp; mun (40 kg)" data-hi="क्विंटल और मन (40 किलो) में बिक्री">Sold by the quintal &amp; mun (40 kg)</li>
+        </ul>
+      
+        <div class="cart-add" data-cart-add data-products="rice_polish,rice_husk"></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MUSTARD SEED BUY / SELL TRADE DESK SECTION -->
+  <section class="section alt scroll-spy-target" id="seed-trade">
+    <p class="eyebrow center i18n" data-en="Agricultural Trade Desk" data-hi="अनाज व्यापार केंद्र">Agricultural Trade Desk</p>
+    <h2 class="i18n" data-en="Mustard Seed: Direct Buy &amp; Sell" data-hi="सरसों खरीद और बिक्री केंद्र">Mustard Seed: Direct Buy &amp; Sell</h2>
+    <p class="section-sub i18n"
+      data-en="Transparent trading for local farmers, bulk buyers, and processors across Bulandshahr."
+      data-hi="बुलंदशहर के किसानों, थोक खरीदारों और मिल मालिकों के लिए पारदर्शी व्यापार।">
+      Transparent trading for local farmers, bulk buyers, and processors across Bulandshahr.
+    </p>
+
+    <div class="product-grid">
+      <article class="product-card has-photo reveal">
+        <div class="card-photo" data-emoji="👨‍🌾"><img src="images/seed-farmer.jpg" alt="Traditional weighing scale and mustard seed sacks at the mill" width="1000" height="625" loading="lazy" onerror="this.parentElement.classList.add('no-photo')"></div>
+        <span class="tag i18n" data-en="For Farmers" data-hi="किसानों के लिए">For Farmers</span>
+        <h3 class="i18n" data-en="Sell Your Mustard Harvest" data-hi="अपनी सरसों की फसल बेचें">Sell Your Mustard Harvest</h3>
+        <p class="i18n"
+          data-en="Bring your raw mustard crop to Apna Oil Mill in Bigrau. We ensure honest digital weighing, immediate evaluation, and fair market rates."
+          data-hi="बिगराउ स्थित अपना ऑयल मिल पर अपनी सरसों लाएँ। हम सही वज़न, पारदर्शी जाँच और उचित दाम की गारंटी देते हैं।">
+          Bring your raw mustard crop to Apna Oil Mill in Bigrau. We ensure honest digital weighing, immediate evaluation, and fair market rates.
+        </p>
+        <ul class="feat-list">
+          <li class="i18n" data-en="Transparent weighing scale" data-hi="पारदर्शी वज़न प्रणाली">Transparent weighing scale</li>
+          <li class="i18n" data-en="Fair market evaluation" data-hi="उचित बाजार मूल्यांकन">Fair market evaluation</li>
+          <li class="i18n" data-en="Instant settlement assurance" data-hi="तुरंत भुगतान का भरोसा">Instant settlement assurance</li>
+        </ul>
+        <div style="margin-top: 24px;">
+          <a href="https://wa.me/919456603818?text=Hi%20Apna%20Oil%20Mill%2C%20I%20want%20to%20sell%20my%20mustard%20seed%20harvest.%20Please%20share%20details."
+             target="_blank" rel="noopener" class="btn btn-primary full wa-link"
+             data-wa-phone="919456603818"
+             data-wa-en="Hi Apna Oil Mill, I want to sell my mustard seed harvest."
+             data-wa-hi="नमस्ते अपना ऑयल मिल, मैं अपनी सरसों बेचना चाहता हूँ।">
+            <span class="i18n" data-en="Offer Crop to Mill" data-hi="मिल को फसल की पेशकश करें">Offer Crop to Mill</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="product-card has-photo reveal">
+        <div class="card-photo" data-emoji="🌾"><img src="images/seed-bulk.jpg" alt="Jute sacks of graded mustard seed with steel scoops" width="1000" height="625" loading="lazy" onerror="this.parentElement.classList.add('no-photo')"></div>
+        <span class="tag i18n" data-en="For Traders &amp; Mills" data-hi="व्यापारियों और मिलों के लिए">For Traders &amp; Mills</span>
+        <h3 class="i18n" data-en="Buy Graded Bulk Seed" data-hi="थोक में साफ सरसों खरीदें">Buy Graded Bulk Seed</h3>
+        <p class="i18n"
+          data-en="We supply thoroughly cleaned, graded, and moisture-tested raw mustard seeds in wholesale quantities by the quintal and mun (40 kg) for processing units."
+          data-hi="हम प्रोसेसिंग यूनिट्स के लिए क्विंटल और मन (40 किलो) के हिसाब से पूरी तरह साफ और छंटाई की हुई थोक सरसों सप्लाई करते हैं।">
+          We supply thoroughly cleaned, graded, and moisture-tested raw mustard seeds in wholesale quantities by the quintal and mun (40 kg) for processing units.
+        </p>
+        <ul class="feat-list">
+          <li class="i18n" data-en="Cleaned &amp; machine-graded" data-hi="मशीन द्वारा साफ और छांटी हुई">Cleaned &amp; machine-graded</li>
+          <li class="i18n" data-en="Bulk supply available" data-hi="थोक आपूर्ति उपलब्ध">Bulk supply available</li>
+          <li class="i18n" data-en="Sold by quintal &amp; mun (40 kg)" data-hi="क्विंटल और मन (40 किलो) में बिक्री">Sold by quintal &amp; mun (40 kg)</li>
+        </ul>
+        <div style="margin-top: 24px;">
+          <a href="https://wa.me/919456603818?text=Hi%20Apna%20Oil%20Mill%2C%20I%20want%20to%20buy%20mustard%20seeds%20in%20bulk."
+             target="_blank" rel="noopener" class="btn btn-whatsapp full wa-link"
+             data-wa-phone="919456603818"
+             data-wa-en="Hi Apna Oil Mill, I want to buy mustard seeds in bulk."
+             data-wa-hi="नमस्ते अपना ऑयल मिल, मुझे थोक में सरसों खरीदनी है।">
+            <span class="i18n" data-en="Inquire Bulk Seed Rates" data-hi="थोक रेट के लिए संपर्क करें">Inquire Bulk Seed Rates</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CUSTOM OIL PRESSING SECTION -->
+  <section class="section pilai-section scroll-spy-target" id="pilai">
+    <div class="pilai-card reveal">
+      <span class="tag pilai-tag i18n" data-en="Job-Work Service" data-hi="पिसाई सेवा">Job-Work Service</span>
+      <p class="eyebrow i18n" data-en="Custom Oil Pressing Service" data-hi="अपना अनाज पिसवाएं">Custom Oil Pressing Service</p>
+      <h2 class="i18n" data-en="Get Your Own Mustard Seed Pressed at Our Mill" data-hi="अपनी सरसों लाइए, हम उसका तेल निकाल देंगे">Get Your Own Mustard Seed Pressed at Our Mill</h2>
+      <p class="i18n"
+        data-en="If you have your own mustard seed from your field, bring it to Apna Oil Mill and we will press it into pure oil at our mill on a job-work basis. You receive your own oil and oil cake back — charges are calculated by the weight of the seed."
+        data-hi="अगर आपके पास अपने खेत की सरसों है, तो उसे अपना ऑयल मिल में लाइए। हम उसका तेल निकालकर आपको आपका तेल और खल वापस दे देंगे। इसका चार्ज अनाज के वज़न के हिसाब से लिया जाता है।">
+        If you have your own mustard seed from your field, bring it to Apna Oil Mill and we will press it into pure oil at our mill on a job-work basis. You receive your own oil and oil cake back — charges are calculated by the weight of the seed.
+      </p>
+      <p class="local-term i18n" data-en="Locally, this service is known as Sarso Pilai." data-hi="इसे आमतौर पर सरसों पिलाई भी कहा जाता है।">Locally, this service is known as Sarso Pilai.</p>
+
+      <div class="pilai-points">
+        <div class="pilai-point reveal">
+          <span class="mono-label i18n" data-en="Step 1" data-hi="चरण 1">Step 1</span>
+          <p class="i18n" data-en="Bring your seed to the mill, or arrange pickup by contacting us." data-hi="अपना अनाज मिल पर लाइए, या हमसे संपर्क कर पिकअप की व्यवस्था करवाइए।">Bring your seed to the mill, or arrange pickup by contacting us.</p>
+        </div>
+        <div class="pilai-point reveal">
+          <span class="mono-label i18n" data-en="Step 2" data-hi="चरण 2">Step 2</span>
+          <p class="i18n" data-en="Seed is weighed in front of you before pressing." data-hi="पिसाई से पहले आपके सामने अनाज तोला जाता है।">Seed is weighed in front of you before pressing.</p>
+        </div>
+        <div class="pilai-point reveal">
+          <span class="mono-label i18n" data-en="Step 3" data-hi="चरण 3">Step 3</span>
+          <p class="i18n" data-en="Pressing charge is calculated by weight — confirm the current rate with us directly." data-hi="चार्ज वज़न के हिसाब से लिया जाता है — मौजूदा रेट जानने के लिए हमसे सीधे बात करें।">Pressing charge is calculated by weight — confirm the current rate with us directly.</p>
+        </div>
+        <div class="pilai-point reveal">
+          <span class="mono-label i18n" data-en="Step 4" data-hi="चरण 4">Step 4</span>
+          <p class="i18n" data-en="Take home your own pure oil and oil cake, pressed the same day where possible." data-hi="उसी दिन (जहाँ संभव हो) अपना शुद्ध तेल और खल लेकर जाइए।">Take home your own pure oil and oil cake, pressed the same day where possible.</p>
+        </div>
+      </div>
+
+      <p class="area-note i18n"
+        data-en="This service and our delivery are currently available only within Bulandshahr district. We are unable to service other locations at this time."
+        data-hi="सूचना: यह सेवा और डिलीवरी फिलहाल सिर्फ बुलंदशहर जिले में ही उपलब्ध है। अन्य जगहों के लिए यह सुविधा अभी उपलब्ध नहीं है।">
+        This service and our delivery are currently available only within Bulandshahr district. We are unable to service other locations at this time.
+      </p>
+
+      <div class="hero-actions pilai-actions">
+        <a href="https://wa.me/919456603818?text=Hi%2C%20I%20want%20to%20get%20my%20own%20mustard%20seed%20pressed."
+           target="_blank" rel="noopener" class="btn btn-whatsapp wa-link"
+           data-wa-phone="919456603818"
+           data-wa-en="Hi, I want to get my own mustard seed pressed. Please share the current rate per kg."
+           data-wa-hi="नमस्ते, मैं अपनी सरसों पिसवाना चाहता/चाहती हूँ। कृपया प्रति किलो मौजूदा रेट बताएं।">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.13c-.22.62-1.28 1.19-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.86-.27-1.48-.53-2.6-1.12-4.3-3.74-4.43-3.92-.13-.18-1.06-1.41-1.06-2.69 0-1.28.67-1.91.9-2.17.22-.26.5-.32.67-.32.16 0 .33 0 .47.01.15.01.36-.06.56.43.22.53.74 1.83.8 1.96.06.13.1.29.02.47-.08.18-.13.29-.25.44-.13.16-.27.35-.38.47-.13.13-.26.27-.11.53.15.26.67 1.1 1.44 1.78 1 .88 1.83 1.16 2.09 1.29.26.13.42.11.57-.06.16-.18.66-.76.83-1.02.18-.26.35-.22.6-.13.24.09 1.55.73 1.82.86.26.13.44.19.5.3.06.13.06.71-.16 1.33z"/></svg>
+          <span class="i18n" data-en="Confirm Rate on WhatsApp" data-hi="व्हाट्सएप पर रेट पूछें">Confirm Rate on WhatsApp</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost-gold i18n" data-en="Enquire via Form" data-hi="फॉर्म से पूछें">Enquire via Form</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANCE PAYMENT SECTION -->
+  <section class="section scroll-spy-target" id="payment">
+    <p class="eyebrow center i18n" data-en="Online Secure Transaction" data-hi="सुरक्षित ऑनलाइन भुगतान">Online Secure Transaction</p>
+    <h2 class="i18n" data-en="Advance Payment After Booking" data-hi="बुकिंग के बाद एडवांस पेमेंट">Advance Payment After Booking</h2>
+    <p class="section-sub i18n"
+      data-en="Scan the QR code or use the direct UPI app button below to complete your advance payment securely."
+      data-hi="अपनी बुकिंग के बाद सुरक्षित रूप से एडवांस भुगतान करने के लिए नीचे दिए गए क्यूआर कोड को स्कैन करें या यूपीआई बटन का उपयोग करें।">
+      Scan the QR code or use the direct UPI app button below to complete your advance payment securely.
+    </p>
+
+    <div class="advance-payment-section reveal" style="background: #fff8dc; padding: 35px; border-radius: 14px; border: 2px dashed #b8860b; max-width: 520px; margin: 0 auto; text-align: center;">
+      <h3 style="color: #b8860b; margin-bottom: 12px; font-family: 'Cormorant Garamond', serif; font-size: 26px;">🔒 Apna Oil Mill Payment Desk</h3>
+      <p style="color: #555; font-size: 15px; margin-bottom: 20px;" class="i18n"
+        data-en="Use any UPI app (PhonePe, Google Pay, Paytm) to scan and pay."
+        data-hi="भुगतान के लिए किसी भी यूपीआई ऐप (PhonePe, Google Pay, Paytm) का उपयोग करें।">
+        Use any UPI app (PhonePe, Google Pay, Paytm) to scan and pay.
+      </p>
+
+      <!-- QR Code Image -->
+      <div style="background: white; padding: 15px; display: inline-block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+        <img src="images/qr-code.jpeg" alt="Apna Oil Mill Advance Payment QR Code" style="max-width: 210px; border-radius: 8px; display: block;">
+      </div>
+
+      <!-- UPI Details -->
+      <div style="margin-top: 20px; font-size: 16px;">
+        <p style="margin: 6px 0;"><strong>UPI ID:</strong> <span style="color: #d9534f; background: #ffe6e6; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-family: monospace;">7830469154@ybl</span></p>
+        <p style="margin: 6px 0;"><strong>Merchant Name:</strong> Praveen Kumar</p>
+      </div>
+
+      <!-- Direct Mobile Pay Button -->
+      <div style="margin-top: 20px;">
+        <a href="upi://pay?pa=7830469154@ybl&pn=Praveen%20Kumar&cu=INR" class="pay-btn" style="background: #28a745; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; font-size: 16px;">
+          Pay Advance via UPI App
+        </a>
+      </div>
+
+      <p style="font-size: 13px; color: #666; margin-top: 18px;" class="i18n"
+        data-en="*After payment, please share the screenshot on WhatsApp (+91 94566 03818) to confirm your order.*"
+        data-hi="*भुगतान के बाद, अपना ऑर्डर कंफर्म करने के लिए कृपया व्हाट्सएप (+91 94566 03818) पर स्क्रीनशॉट भेजें।*">
+        *After payment, please share the screenshot on WhatsApp (+91 94566 03818) to confirm your order.*
+      </p>
+    </div>
+  </section>
+
+  <!-- LOCATION & LIVE ROUTE SECTION -->
+  <section class="section scroll-spy-target" id="location">
+    <p class="eyebrow center i18n" data-en="Find Us" data-hi="हमारा पता">Find Us</p>
+    <h2 class="i18n" data-en="Visit Apna Oil Mill" data-hi="अपना ऑयल मिल पर पधारें">Visit Apna Oil Mill</h2>
+    <p class="section-sub i18n"
+      data-en="Located near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr — open for farmers, traders, and retail customers across the district."
+      data-hi="भगवंत सिंह इंटर कॉलेज के पास, बिगराउ, सियाना, बुलंदशहर में स्थित — जिले भर के किसानों, व्यापारियों और ग्राहकों के लिए खुली है।">
+      Located near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr — open for farmers, traders, and retail customers across the district.
+    </p>
+
+    <div class="location-grid reveal">
+      <div class="location-info-card">
+        <div class="loc-icon">🗺️</div>
+        <h3 class="i18n" data-en="Live Route &amp; Directions" data-hi="लाइव रूट और दिशा-निर्देश">Live Route &amp; Directions</h3>
+        <p class="i18n"
+          data-en="<strong>Apna Oil Mill</strong><br>Near Bhagwant Singh Inter College, Village Bigrau, Siyana<br>Bulandshahr District, Uttar Pradesh — 203412"
+          data-hi="<strong>अपना ऑयल मिल</strong><br>भगवंत सिंह इंटर कॉलेज के पास, ग्राम बिगराउ, सियाना<br>बुलंदशहर जिला, उत्तर प्रदेश — 203412">
+          <strong>Apna Oil Mill</strong><br>Near Bhagwant Singh Inter College, Village Bigrau, Siyana<br>Bulandshahr District, Uttar Pradesh — 203412
+        </p>
+        <p class="detail-note i18n"
+          data-en="Click below to open Google Maps with live navigation, real-time traffic, and the fastest route from your exact mill location."
+          data-hi="अपनी सटीक मिल लोकेशन से लाइव नेविगेशन और रूट देखने के लिए नीचे क्लिक करें।">
+          Click below to open Google Maps with live navigation, real-time traffic, and the fastest route from your exact mill location.
+        </p>
+        <div class="loc-actions">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=28.584141,78.070747" 
+             target="_blank" rel="noopener" class="btn btn-primary full">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            <span class="i18n" data-en="Get Live Route &amp; Navigation" data-hi="लाइव रूट और नेविगेशन देखें">Get Live Route &amp; Navigation</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe 
+          title="Apna Oil Mill Exact Live Location Map"
+          src="https://maps.google.com/maps?q=28.584141,78.070747&z=17&output=embed" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="section" id="gallery">
+    <p class="eyebrow center i18n" data-en="Our Mill" data-hi="हमारी मिल">Our Mill</p>
+    <h2 class="i18n" data-en="See the Mill at Work" data-hi="मिल की झलक देखें">See the Mill at Work</h2>
+
+    <div class="stories-bar reveal">
+      <div class="story-item"><span class="story-ring"><span class="story-initial">🛢️</span></span><span class="story-label i18n" data-en="Oil" data-hi="तेल">Oil</span></div>
+      <div class="story-item"><span class="story-ring"><span class="story-initial">🐄</span></span><span class="story-label i18n" data-en="Khal" data-hi="खल">Khal</span></div>
+      <div class="story-item"><span class="story-ring"><span class="story-initial">🌾</span></span><span class="story-label i18n" data-en="Seed" data-hi="अनाज">Seed</span></div>
+      <div class="story-item"><span class="story-ring"><span class="story-initial">🍚</span></span><span class="story-label i18n" data-en="Rice" data-hi="चावल">Rice</span></div>
+      <div class="story-item"><span class="story-ring"><span class="story-initial">⚙️</span></span><span class="story-label i18n" data-en="Mill" data-hi="मिल">Mill</span></div>
+      <div class="story-item"><span class="story-ring"><span class="story-initial">👨‍🌾</span></span><span class="story-label i18n" data-en="Owner" data-hi="मालिक">Owner</span></div>
+    </div>
+
+   <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="images/oil.jpg" alt="Pure Mustard Oil" style="width:100%; height:140px; object-fit:cover; border-radius:8px;"></div>
+      <div class="gallery-item reveal"><img src="images/press.jpg" alt="Mill Machine in Action" style="width:100%; height:140px; object-fit:cover; border-radius:8px;"></div>
+      <div class="gallery-item reveal"><img src="images/khal.jpg" alt="Mustard Oil Cake (Khal)" style="width:100%; height:140px; object-fit:cover; border-radius:8px;"></div>
+      <div class="gallery-item reveal"><img src="images/seed.jpg" alt="Mustard Seeds" style="width:100%; height:140px; object-fit:cover; border-radius:8px;"></div>
+      <div class="gallery-item reveal"><img src="images/rice.jpg" alt="Rice Processing" style="width:100%; height:140px; object-fit:cover; border-radius:8px;"></div>
+      <div class="gallery-item reveal"><img src="images/scale.jpg" alt="Customer Service at Mill" style="width:100%; height:140px; object-fit:cover; border-radius:8px;"></div>
+    </div>
+  </section>
+
+<!-- TESTIMONIALS SECTION -->
+  <section class="section alt" id="testimonials">
+    <p class="eyebrow center i18n" data-en="Customer Feedback" data-hi="ग्राहकों की राय">Customer Feedback</p>
+    <h2 class="i18n" data-en="What Our Customers Say" data-hi="हमारे ग्राहक क्या कहते हैं">What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card testimonial-placeholder reveal">
+        <span class="stars">★★★★★</span>
+        <p class="i18n" 
+           data-en="&quot;The oil and khal from Apna Oil Mill are always pure. The weight is accurate, and the custom pressing service is top-notch.&quot; — Chaudhary Rambeer Singh, Bigrau" 
+           data-hi="&quot;अपना ऑयल मिल से तेल और खल हमेशा शुद्ध मिलता है। तौल में कोई कमी नहीं होती और पिलाई की सुविधा भी बहुत बढ़िया है।&quot; — चौधरी रामबीर सिंह, बिगरौ">
+          "Apna Oil Mill se tel aur khal hamesha shuddh milta hai. Tol me koi kami nahi hoti aur pilai ki service bhi bohot acchi hai." — Chaudhary Rambeer Singh, Bigrau
+        </p>
+      </div>
+      <div class="testimonial-card testimonial-placeholder reveal">
+        <span class="stars">★★★★★</span>
+        <p class="i18n" 
+           data-en="&quot;I've been buying mustard oil from here for 5 years. It is 100% pure without any blending. Most trusted mill in Siyana.&quot; — Satpal Lodhi, Bugrasi" 
+           data-hi="&quot;पिछले 5 साल से यहाँ से सरसों का तेल ले रहा हूँ। बिल्कुल असली और बिना किसी मिलावट का होता है। पूरे सियाना में सबसे भरोसेमंद मिल है।&quot; — सतपाल लोधी, बुगरासी">
+          "Pichle 5 saal se yahan se sarson ka tel le raha hoon. Bilkul asli aur bina kisi milawat ke hota hai. Poore Siyana me sabse bharosemand mill hai." — Satpal Lodhi, Bugrasi
+        </p>
+      </div>
+      <div class="testimonial-card testimonial-placeholder reveal">
+        <span class="stars">★★★★★</span>
+        <p class="i18n" 
+           data-en="&quot;Best place for farmers to sell their mustard crop. Honest digital weighing and instant payment settlement.&quot; — Mahipal Singh, Kuchesar" 
+           data-hi="&quot;अपनी फसल बेचने के लिए किसानों के लिए सबसे सही जगह है। वजन बिल्कुल साफ डिजिटल कांटे पर होता है और पेमेंट भी तुरंत मिल जाता है।&quot; — महीपाल सिंह, कुचेसर">
+          "Apni fasal bechne ke liye sabse sahi jagah hai. Wazan bilkul saaf aur digital scale par hota hai, aur payment bhi turant mil jata hai." — Mahipal Singh, Kuchesar
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE MILL SECTION -->
+  <section class="section alt scroll-spy-target" id="mill">
+    <div class="mill-grid">
+      <div class="mill-copy reveal">
+        <p class="eyebrow i18n" data-en="About the Mill" data-hi="मिल के बारे में">About the Mill</p>
+        <h2 class="i18n" data-en="A Trading House Built on Trust" data-hi="भरोसे पर बना एक व्यापार">A Trading House Built on Trust</h2>
+        <p class="i18n"
+          data-en="Apna Oil Mill operates near Bhagwant Singh Inter College in Bigrau, Siyana, Bulandshahr, Uttar Pradesh, under the proprietorship of Mr. Kiranpal Singh. The mill presses mustard oil, produces oil cake, processes rice, and trades mustard seed for buyers across the district — built on the same principle it started with: honest weight and honest oil."
+          data-hi="अपना ऑयल मिल, भगवंत सिंह इंटर कॉलेज के पास, बिगराउ, सियाना, बुलंदशहर (उत्तर प्रदेश) में स्थित है, जिसके मालिक श्री किरणपाल सिंह हैं। यह मिल सरसों का तेल निकालती है, खल बनाती है, चावल प्रोसेसिंग करती है, और जिले भर के व्यापारियों के साथ सरसों का व्यापार करती है — उसी सिद्धांत पर जिस पर यह शुरू हुई थी: सही तोल और शुद्ध तेल।">
+          Apna Oil Mill operates near Bhagwant Singh Inter College in Bigrau, Siyana, Bulandshahr, Uttar Pradesh, under the proprietorship of Mr. Kiranpal Singh. The mill presses mustard oil, produces oil cake, processes rice, and trades mustard seed for buyers across the district — built on the same principle it started with: honest weight and honest oil.
+        </p>
+        <div class="proprietor-card">
+          <span class="mono-label i18n" data-en="Proprietor" data-hi="मालिक">Proprietor</span>
+          <strong>Mr. Kiranpal Singh</strong>
+          <span class="loc-line i18n" data-en="📍 Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP" data-hi="📍 भगवंत सिंह इंटर कॉलेज के पास, बिगराउ, सियाना, बुलंदशहर, यूपी">📍 Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE DEVELOPER SECTION -->
+  <section class="section developer-section scroll-spy-target" id="developer">
+    <div class="developer-card reveal">
+      <p class="eyebrow i18n" data-en="About the Developer" data-hi="डेवलपर के बारे में">About the Developer</p>
+      <h2 class="i18n" data-en="Built by Praveen Kumar" data-hi="प्रवीण कुमार द्वारा निर्मित">Built by Praveen Kumar</h2>
+      <p class="i18n"
+        data-en="I'm a final-year B.Tech Computer Science student and system developer, based in Ghaziabad. I designed and built this website for Apna Oil Mill as a working example of the kind of clean, professional site I build for small and growing businesses."
+        data-hi="मैं गाज़ियाबाद का रहने वाला एक B.Tech कंप्यूटर साइंस का अंतिम वर्ष का छात्र और सिस्टम डेवलपर हूं। मैंने अपना ऑयल मिल के लिए यह वेबसाइट बनाई है, जो यह दिखाती है कि मैं छोटे व्यापारों के लिए कैसी अच्छी और प्रोफेशनल वेबसाइट बना सकता हूं।">
+        I'm a final-year B.Tech Computer Science student and system developer, based in Ghaziabad. I designed and built this website for Apna Oil Mill as a working example of the kind of clean, professional site I build for small and growing businesses.
+      </p>
+
+      <div class="dev-services">
+        <span class="dev-service-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z"/></svg>
+          <span class="i18n" data-en="Websites" data-hi="वेबसाइट">Websites</span>
+        </span>
+        <span class="dev-service-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          <span class="i18n" data-en="Mobile Apps" data-hi="मोबाइल ऐप">Mobile Apps</span>
+        </span>
+        <span class="dev-service-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 12h.01M9 10v4M15 11h.01M17 13h.01"/></svg>
+          <span class="i18n" data-en="2D Games" data-hi="2D गेम्स">2D Games</span>
+        </span>
+      </div>
+
+      <a href="#contact" class="btn btn-primary i18n" data-en="Hire Me for Your Business Website" data-hi="अपनी वेबसाइट के लिए मुझसे संपर्क करें">Hire Me for Your Business Website</a>
+    </div>
+  </section>
+
+  <!-- CONTACT / ORDER SECTION -->
+  <section class="section contact-section" id="contact">
+    <p class="eyebrow center i18n" data-en="Order or Enquire" data-hi="ऑर्डर करें या पूछें">Order or Enquire</p>
+    <h2 class="i18n" data-en="Get in Touch" data-hi="संपर्क करें">Get in Touch</h2>
+    <p class="section-sub i18n"
+      data-en="For fastest response, message us on WhatsApp. Or leave your details and we'll call you back."
+      data-hi="जल्दी जवाब के लिए व्हाट्सएप पर मैसेज करें। या अपनी जानकारी भरें, हम आपको कॉल करेंगे।">
+      For fastest response, message us on WhatsApp. Or leave your details and we'll call you back.
+    </p>
+
+    <div class="contact-wrap">
+      <div class="contact-details">
+
+        <div class="contact-persona owner reveal">
+          <div class="persona-avatar">KS</div>
+          <div class="persona-info">
+            <span class="persona-role i18n" data-en="Mill Owner" data-hi="मिल मालिक">Mill Owner</span>
+            <strong class="persona-name">Mr. Kiranpal Singh</strong>
+            <a class="detail-row wa-link" href="https://wa.me/919456603818?text=Hi%20Apna%20Oil%20Mill%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+               target="_blank" rel="noopener"
+               data-wa-phone="919456603818"
+               data-wa-en="Hi Apna Oil Mill! I would like to enquire about your products."
+               data-wa-hi="नमस्ते अपना ऑयल मिल! मुझे आपके उत्पादों के बारे में जानकारी चाहिए।">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              +91 94566 03818
+            </a>
+            <p class="detail-note i18n"
+              data-en="Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP<br><strong>Delivery available only within Bulandshahr district.</strong>"
+              data-hi="भगवंत सिंह इंटर कॉलेज के पास, बिगराउ, सियाना, बुलंदशहर, यूपी<br><strong>डिलीवरी सिर्फ बुलंदशहर जिले में उपलब्ध है।</strong>">
+              Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP<br><strong>Delivery available only within Bulandshahr district.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-persona developer reveal">
+          <div class="persona-avatar dev">PK</div>
+          <div class="persona-info">
+            <span class="persona-role i18n" data-en="Website Developer" data-hi="वेबसाइट डेवलपर">Website Developer</span>
+            <strong class="persona-name">Praveen Kumar</strong>
+            <a class="detail-row" href="mailto:praveenkumarlodhi001@gmail.com">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+              praveenkumarlodhi001@gmail.com
+            </a>
+            <a class="detail-row wa-link" href="https://wa.me/917830469154?text=Hi%20Praveen%2C%20I%27d%20like%20to%20discuss%20a%20website%20%2F%20app%20project."
+               target="_blank" rel="noopener"
+               data-wa-phone="917830469154"
+               data-wa-en="Hi Praveen, I'd like to discuss a website / app project."
+               data-wa-hi="नमस्ते प्रवीण, मुझे वेबसाइट/ऐप प्रोजेक्ट के बारे में बात करनी है।">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+              +91 78304 69154
+            </a>
+            <p class="detail-note i18n"
+              data-en="For website, mobile app, or software project enquiries only."
+              data-hi="केवल वेबसाइट, ऐप या सॉफ्टवेयर प्रोजेक्ट से जुड़े सवालों के लिए।">
+              For website, mobile app, or software project enquiries only.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" onsubmit="handleContactSubmit(event, this)">
+        <div class="form-row">
+          <input type="text" name="name" required
+            data-placeholder-en="Your name" data-placeholder-hi="आपका नाम" placeholder="Your name">
+          <input type="tel" name="phone" required
+            data-placeholder-en="Phone number" data-placeholder-hi="फोन नंबर" placeholder="Phone number">
+        </div>
+        <select name="requirement" required id="requirementSelect" onchange="updateRoutingHint(this)">
+          <option value="" disabled selected class="i18n" data-en="What do you need?" data-hi="आपको क्या चाहिए?">What do you need?</option>
+          <option value="oil" class="i18n" data-en="Mustard Oil" data-hi="सरसों का तेल">Mustard Oil</option>
+          <option value="khal" class="i18n" data-en="Mustard Oil Cake (Khal)" data-hi="सरसों की खल">Mustard Oil Cake (Khal)</option>
+          <option value="seed_buy" class="i18n" data-en="Buy Mustard Seeds" data-hi="सरसों खरीदें">Buy Mustard Seeds</option>
+          <option value="seed_sell" class="i18n" data-en="Sell Mustard Seeds (Farmers)" data-hi="सरसों बेचें (किसान भाई)">Sell Mustard Seeds (Farmers)</option>
+          <option value="rice_polish" class="i18n" data-en="Rice Polish" data-hi="चावल पॉलिश">Rice Polish</option>
+          <option value="rice_husk" class="i18n" data-en="Rice Chuukar / Husk" data-hi="चावल का चूकर/भूसी">Rice Chuukar / Husk</option>
+          <option value="pilai" class="i18n" data-en="Custom Oil Pressing" data-hi="अपना अनाज पिसवाना">Custom Oil Pressing</option>
+          <option value="web" class="i18n" data-en="Hire for Website / Tech Project" data-hi="वेबसाइट के लिए संपर्क">Hire for Website / Tech Project</option>
+        </select>
+        <p class="routing-hint" id="routingHint" hidden></p>
+        <textarea name="message" rows="3" required
+          data-placeholder-en="Quantity, delivery location (within Bulandshahr), or project details"
+          data-placeholder-hi="मात्रा, डिलीवरी स्थान (बुलंदशहर में), या अन्य जानकारी"
+          placeholder="Quantity, delivery location (within Bulandshahr), or project details"></textarea>
+        <button type="submit" class="btn btn-primary full i18n" data-en="Send on WhatsApp" data-hi="व्हाट्सएप पर भेजें">Send on WhatsApp</button>
+        <p class="form-success" id="formSuccess" hidden></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p class="i18n"
+    data-en="&copy; 2026 Apna Oil Mill, Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP. Website by Praveen Kumar."
+    data-hi="&copy; 2026 अपना ऑयल मिल, भगवंत सिंह इंटर कॉलेज के पास, बिगराउ, सियाना, बुलंदशहर, उत्तर प्रदेश। वेबसाइट: प्रवीण कुमार।">
+    &copy; 2026 Apna Oil Mill, Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP. Website by Praveen Kumar.
+  </p>
+</footer>
+
+<!-- ============================================================
+     CART: floating button, toast & drawer
+============================================================ -->
+<button type="button" class="cart-fab" id="cartFab" onclick="openCart()" aria-label="Open cart">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.4"/><circle cx="19" cy="21" r="1.4"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.5L22 7H6"/></svg>
+  <span class="cart-badge" id="cartBadge" hidden>0</span>
+</button>
+
+<div class="cart-toast" id="cartToast" role="status" aria-live="polite" hidden></div>
+
+<div class="cart-overlay" id="cartOverlay" hidden>
+  <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="cart-head">
+      <h3 id="cartTitle" class="i18n" data-en="Your Cart" data-hi="आपका कार्ट">Your Cart</h3>
+      <button type="button" class="cart-close" onclick="closeCart()" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-body">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛒</div>
+        <p class="i18n" data-en="Your cart is empty. Add products to place an order." data-hi="आपका कार्ट खाली है। ऑर्डर करने के लिए उत्पाद जोड़ें।">Your cart is empty. Add products to place an order.</p>
+        <a href="#products" class="btn btn-primary i18n" onclick="closeCart()" data-en="Browse Products" data-hi="उत्पाद देखें">Browse Products</a>
+      </div>
+
+      <ul class="cart-items" id="cartItems"></ul>
+
+      <form class="cart-form" id="cartForm" onsubmit="handleCartCheckout(event, this)" hidden>
+        <p class="cart-note i18n"
+          data-en="No online price is shown — we'll confirm today's rates and availability on WhatsApp. Delivery only within Bulandshahr district."
+          data-hi="ऑनलाइन कीमत नहीं दिखाई गई है — आज का रेट और उपलब्धता हम व्हाट्सएप पर कन्फर्म करेंगे। डिलीवरी सिर्फ बुलंदशहर जिले में।">
+          No online price is shown — we'll confirm today's rates and availability on WhatsApp. Delivery only within Bulandshahr district.
+        </p>
+        <input type="text" name="name" required autocomplete="name"
+          data-placeholder-en="Your name" data-placeholder-hi="आपका नाम" placeholder="Your name">
+        <input type="tel" name="phone" required autocomplete="tel" inputmode="tel"
+          data-placeholder-en="Phone number" data-placeholder-hi="फोन नंबर" placeholder="Phone number">
+        <textarea name="address" rows="2" required
+          data-placeholder-en="Delivery address (village / town in Bulandshahr district)"
+          data-placeholder-hi="डिलीवरी का पता (बुलंदशहर जिले का गाँव / शहर)"
+          placeholder="Delivery address (village / town in Bulandshahr district)"></textarea>
+        <textarea name="note" rows="2"
+          data-placeholder-en="Any note (optional)" data-placeholder-hi="कोई संदेश (वैकल्पिक)" placeholder="Any note (optional)"></textarea>
+        <button type="submit" class="btn btn-whatsapp full">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.13c-.22.62-1.28 1.19-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.86-.27-1.48-.53-2.6-1.12-4.3-3.74-4.43-3.92-.13-.18-1.06-1.41-1.06-2.69 0-1.28.67-1.91.9-2.17.22-.26.5-.32.67-.32.16 0 .33 0 .47.01.15.01.36-.06.56.43.22.53.74 1.83.8 1.96.06.13.1.29.02.47-.08.18-.13.29-.25.44-.13.16-.27.35-.38.47-.13.13-.26.27-.11.53.15.26.67 1.1 1.44 1.78 1 .88 1.83 1.16 2.09 1.29.26.13.42.11.57-.06.16-.18.66-.76.83-1.02.18-.26.35-.22.6-.13.24.09 1.55.73 1.82.86.26.13.44.19.5.3.06.13.06.71-.16 1.33z"/></svg>
+          <span class="i18n" data-en="Send Order on WhatsApp" data-hi="व्हाट्सएप पर ऑर्डर भेजें">Send Order on WhatsApp</span>
+        </button>
+        <button type="button" class="cart-clear i18n" onclick="clearCart()" data-en="Clear cart" data-hi="कार्ट खाली करें">Clear cart</button>
+        <p class="form-success" id="cartSuccess" hidden></p>
+      </form>
+    </div>
+  </aside>
+</div>
+
+<!-- Background music button -->
+<button type="button" class="music-fab" id="musicFab" onclick="toggleMusic()" aria-pressed="false" aria-label="Play background music" title="Music">
+  <svg class="music-ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+    <path class="music-slash" d="M3 3l18 18"/>
+  </svg>
+  <span class="music-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+</button>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/919456603818?text=Hi%20Apna%20Oil%20Mill%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener" class="whatsapp-float wa-link" aria-label="Chat on WhatsApp"
+   data-wa-phone="919456603818"
+   data-wa-en="Hi Apna Oil Mill! I would like to enquire about your products."
+   data-wa-hi="नमस्ते अपना ऑयल मिल! मुझे आपके उत्पादों के बारे में जानकारी चाहिए।">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.13c-.22.62-1.28 1.19-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.86-.27-1.48-.53-2.6-1.12-4.3-3.74-4.43-3.92-.13-.18-1.06-1.41-1.06-2.69 0-1.28.67-1.91.9-2.17.22-.26.5-.32.67-.32.16 0 .33 0 .47.01.15.01.36-.06.56.43.22.53.74 1.83.8 1.96.06.13.1.29.02.47-.08.18-.13.29-.25.44-.13.16-.27.35-.38.47-.13.13-.26.27-.11.53.15.26.67 1.1 1.44 1.78 1 .88 1.83 1.16 2.09 1.29.26.13.42.11.57-.06.16-.18.66-.76.83-1.02.18-.26.35-.22.6-.13.24.09 1.55.73 1.82.86.26.13.44.19.5.3.06.13.06.71-.16 1.33z"/></svg>
+</a>
+
+<script>
+  let welcomeClosed = false;
+  let exitTriggered = false;
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const welcome = document.getElementById('welcomePopup');
+      if(welcome && !localStorage.getItem('welcomed_apna_oil')) {
+        welcome.hidden = false;
+      } else {
+        welcomeClosed = true;
+      }
+    }, 1500);
+  });
+
+  function closeWelcomePopup() {
+    document.getElementById('welcomePopup').hidden = true;
+    try { localStorage.setItem('welcomed_apna_oil', 'true'); } catch(e) {}
+    welcomeClosed = true;
+  }
+
+  function closeThankyouPopup() {
+    document.getElementById('thankyouPopup').hidden = true;
+  }
+
+  document.addEventListener('mouseleave', (e) => {
+    if(e.clientY < 15 && welcomeClosed && !exitTriggered && !localStorage.getItem('thankyou_shown_apna')) {
+      const thankyou = document.getElementById('thankyouPopup');
+      if(thankyou) {
+        thankyou.hidden = false;
+        exitTriggered = true;
+        try { localStorage.setItem('thankyou_shown_apna', 'true'); } catch(e) {}
+      }
+    }
+  });
+
+  document.querySelectorAll('.site-popup-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if(e.target !== overlay) return;
+      if(overlay.id === 'welcomePopup') closeWelcomePopup();
+      if(overlay.id === 'thankyouPopup') closeThankyouPopup();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key !== 'Escape') return;
+    const welcome = document.getElementById('welcomePopup');
+    const thankyou = document.getElementById('thankyouPopup');
+    if(welcome && !welcome.hidden) closeWelcomePopup();
+    if(thankyou && !thankyou.hidden) closeThankyouPopup();
+  });
+
+  const scrollSpyTargets = document.querySelectorAll('.scroll-spy-target');
+  const scrollSpyLinks = document.querySelectorAll('a.nav-link');
+
+  function updateScrollSpy(){
+    const scrollPos = window.scrollY + 200;
+    scrollSpyTargets.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+
+      if(scrollPos >= top && scrollPos < top + height){
+        scrollSpyLinks.forEach(link => {
+          link.classList.toggle('active-nav', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', updateScrollSpy, { passive: true });
+  updateScrollSpy();
+
+  const toggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  toggle.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+
+  const OWNER_PHONE = '919456603818';
+  const DEV_PHONE = '917830469154';
+
+  function currentLang(){
+    return document.getElementById('htmlRoot').lang === 'hi' ? 'hi' : 'en';
+  }
+
+  function updateRoutingHint(select){
+    const hint = document.getElementById('routingHint');
+    if(!hint) return;
+    const lang = currentLang();
+    if(!select.value){ hint.hidden = true; return; }
+    const isWeb = select.value === 'web';
+    const text = isWeb
+      ? (lang === 'hi' ? '↳ यह संदेश डेवलपर (प्रवीण कुमार) के व्हाट्सएप पर जाएगा।' : '↳ This will open WhatsApp with the Developer (Praveen Kumar).')
+      : (lang === 'hi' ? '↳ यह संदेश मिल मालिक (श्री किरणपाल सिंह) के व्हाट्सएप पर जाएगा।' : '↳ This will open WhatsApp with the Mill Owner (Mr. Kiranpal Singh).');
+    hint.textContent = text;
+    hint.hidden = false;
+    hint.classList.remove('pop-in');
+    void hint.offsetWidth;
+    hint.classList.add('pop-in');
+  }
+
+  function handleContactSubmit(event, form){
+    event.preventDefault();
+    const lang = currentLang();
+    const name = form.querySelector('[name="name"]').value.trim();
+    const phone = form.querySelector('[name="phone"]').value.trim();
+    const select = form.querySelector('#requirementSelect');
+    const opt = select.options[select.selectedIndex];
+    const needLabel = (opt && opt.dataset[lang]) || (opt ? opt.textContent : '');
+    const details = form.querySelector('[name="message"]').value.trim();
+    const isWeb = select.value === 'web';
+    const targetPhone = isWeb ? DEV_PHONE : OWNER_PHONE;
+
+    const message = lang === 'hi'
+      ? `नई पूछताछ (वेबसाइट से):\nनाम: ${name}\nफोन: ${phone}\nज़रूरत: ${needLabel}\nविवरण: ${details}`
+      : `New Enquiry (from Website):\nName: ${name}\nPhone: ${phone}\nNeed: ${needLabel}\nDetails: ${details}`;
+
+    window.open('https://wa.me/' + targetPhone + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
+
+    const targetName = isWeb
+      ? (lang === 'hi' ? 'डेवलपर (प्रवीण कुमार)' : 'the Developer (Praveen Kumar)')
+      : (lang === 'hi' ? 'मिल मालिक (श्री किरणपाल सिंह)' : 'the Mill Owner (Mr. Kiranpal Singh)');
+    const successEl = document.getElementById('formSuccess');
+    successEl.textContent = lang === 'hi'
+      ? `व्हाट्सएप खुल रहा है — ${targetName} तक पहुँचने के लिए वहाँ "भेजें" दबाएं।`
+      : `Opening WhatsApp — tap Send there to reach ${targetName} directly.`;
+    successEl.hidden = false;
+    successEl.classList.remove('pop-in');
+    void successEl.offsetWidth;
+    successEl.classList.add('pop-in');
+
+    form.reset();
+    document.getElementById('routingHint').hidden = true;
+  }
+
+  function buildWhatsAppLinks(lang){
+    document.querySelectorAll('.wa-link').forEach(el => {
+      const phone = el.dataset.waPhone;
+      let msg = el.dataset[lang === 'hi' ? 'waHi' : 'waEn'];
+      if(phone && msg){
+        msg = msg.replace(/\\n/g, '\n');
+        el.href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
+      }
+    });
+  }
+
+  const RATE_TICKER = [
+    { en: 'Pure Mustard Oil', hi: 'शुद्ध सरसों का तेल', icon: '🛢️' },
+    { en: 'Mustard Oil Cake (Khal)', hi: 'सरसों की खल', icon: '🐄' },
+    { en: 'Mustard Seed Buy / Sell', hi: 'सरसों खरीद और बिक्री', icon: '🌾' },
+    { en: 'Polished Rice', hi: 'पॉलिश चावल', icon: '🍚' },
+    { en: 'Rice Chuukar / Husk', hi: 'चावल का चूकर/भूसी', icon: '🌿' },
+    { en: 'Custom Oil Pressing (Pilai)', hi: 'अपना अनाज पिसवाना', icon: '⚙️' },
+  ];
+  const RATE_CTA = { en: 'Confirm today\'s rate on WhatsApp →', hi: 'आज का रेट व्हाट्सएप पर पूछें →' };
+
+  function renderTicker(lang){
+    const track = document.getElementById('tickerTrack');
+    if(!track) return;
+    const items = RATE_TICKER.map(item =>
+      `<span class="ticker-item">${item.icon} ${item[lang]}</span><span class="ticker-dot">•</span>`
+    ).join('');
+    const cta = `<a href="https://wa.me/919456603818?text=${encodeURIComponent(lang === 'hi' ? 'नमस्ते अपना ऑयल मिल! मुझे आपके उत्पादों के बारे में जानकारी चाहिए।' : 'Hi Apna Oil Mill! I would like to enquire about your products.')}" target="_blank" rel="noopener" class="ticker-item ticker-cta">${RATE_CTA[lang]}</a><span class="ticker-dot">•</span>`;
+    track.innerHTML = items + cta + items + cta;
+  }
+
+  function setLanguage(lang){
+    document.querySelectorAll('.i18n').forEach(el => {
+      const val = el.dataset[lang];
+      if(val !== undefined) el.innerHTML = val;
+    });
+    document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+      const key = lang === 'hi' ? 'placeholderHi' : 'placeholderEn';
+      if(el.dataset[key] !== undefined) el.placeholder = el.dataset[key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.langBtn === lang);
+    });
+    buildWhatsAppLinks(lang);
+    renderTicker(lang);
+    document.getElementById('htmlRoot').lang = lang;
+    refreshCartLang(lang);
+    refreshMusicLang(lang);
+    const reqSelect = document.getElementById('requirementSelect');
+    if(reqSelect && reqSelect.value) updateRoutingHint(reqSelect);
+    try { localStorage.setItem('apnaOilLang', lang); } catch(e) {}
+  }
+
+  /* ============================================================
+     ADD TO CART
+     Edit CART_PRODUCTS / CART_UNITS below to change what can be
+     ordered. No prices — rates are confirmed on WhatsApp.
+  ============================================================ */
+  const CART_KEY = 'apnaOilCart_v1';
+
+  const CART_UNITS = {
+    litre:   { en: 'Litre',            hi: 'लीटर' },
+    l5:      { en: '5 Litre can',      hi: '5 लीटर डिब्बा' },
+    l15:     { en: '15 Litre tin',     hi: '15 लीटर टिन' },
+    kg:      { en: 'kg',               hi: 'किलो' },
+    mun:     { en: 'Mun (40 kg)',      hi: 'मन (40 किलो)' },
+    quintal: { en: 'Quintal (100 kg)', hi: 'क्विंटल (100 किलो)' }
+  };
+
+  const CART_PRODUCTS = {
+    oil:         { en: 'Pure Mustard Oil',        hi: 'शुद्ध सरसों का तेल', icon: '🛢️', units: ['litre', 'l5', 'l15'] },
+    khal:        { en: 'Mustard Oil Cake (Khal)', hi: 'सरसों की खल',        icon: '🐄', units: ['kg', 'mun', 'quintal'] },
+    seed:        { en: 'Mustard Seed',            hi: 'सरसों (दाना)',       icon: '🌾', units: ['kg', 'mun', 'quintal'] },
+    rice_polish: { en: 'Polished Rice',           hi: 'पॉलिश चावल',         icon: '🍚', units: ['kg', 'mun', 'quintal'] },
+    rice_husk:   { en: 'Rice Chuukar / Husk',     hi: 'चावल का चूकर/भूसी',  icon: '🌿', units: ['kg', 'mun', 'quintal'] }
+  };
+
+  const CART_TEXT = {
+    en: { add: 'Add to Cart', added: 'Added ✓', toast: 'Added to cart', unit: 'Unit', qty: 'Quantity', product: 'Product',
+          dec: 'Decrease quantity', inc: 'Increase quantity', remove: 'Remove item', open: 'Open cart',
+          items: n => n + (n === 1 ? ' item' : ' items') + ' in cart',
+          sent: 'Opening WhatsApp — tap Send there to place your order with the Mill Owner.' },
+    hi: { add: 'कार्ट में जोड़ें', added: 'जोड़ दिया ✓', toast: 'कार्ट में जोड़ा गया', unit: 'इकाई', qty: 'मात्रा', product: 'उत्पाद',
+          dec: 'मात्रा घटाएँ', inc: 'मात्रा बढ़ाएँ', remove: 'हटाएँ', open: 'कार्ट खोलें',
+          items: n => 'कार्ट में ' + n + ' आइटम',
+          sent: 'व्हाट्सएप खुल रहा है — मिल मालिक को ऑर्डर भेजने के लिए वहाँ "भेजें" दबाएं।' }
+  };
+
+  let cart = loadCart();
+  const cartAddBoxes = [];
+  let cartToastTimer = null;
+
+  function loadCart(){
+    try {
+      const raw = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+      if(!Array.isArray(raw)) return [];
+      return raw.filter(it => it && CART_PRODUCTS[it.id] && CART_UNITS[it.unit] && CART_PRODUCTS[it.id].units.includes(it.unit))
+                .map(it => ({ id: it.id, unit: it.unit, qty: Math.min(999, Math.max(1, parseInt(it.qty, 10) || 1)) }));
+    } catch(e) { return []; }
+  }
+
+  function saveCart(){
+    try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch(e) {}
+  }
+
+  function clampQty(v){
+    const n = parseInt(v, 10);
+    return isNaN(n) ? 1 : Math.min(999, Math.max(1, n));
+  }
+
+  function addToCart(id, unit, qty){
+    const existing = cart.find(it => it.id === id && it.unit === unit);
+    if(existing) existing.qty = Math.min(999, existing.qty + qty);
+    else cart.push({ id, unit, qty });
+    saveCart();
+    renderCart();
+    const fab = document.getElementById('cartFab');
+    fab.classList.remove('bump'); void fab.offsetWidth; fab.classList.add('bump');
+    showCartToast(CART_TEXT[currentLang()].toast);
+  }
+
+  function showCartToast(text){
+    const t = document.getElementById('cartToast');
+    t.textContent = text;
+    t.hidden = false;
+    t.classList.remove('pop-in'); void t.offsetWidth; t.classList.add('pop-in');
+    clearTimeout(cartToastTimer);
+    cartToastTimer = setTimeout(() => { t.hidden = true; }, 1800);
+  }
+
+  function initCartAdd(box){
+    const pids = (box.dataset.products || box.dataset.product || '').split(',').map(s => s.trim()).filter(id => CART_PRODUCTS[id]);
+    if(!pids.length) return;
+    box.classList.add('cart-add');
+    box.innerHTML =
+      (pids.length > 1 ? '<select class="cart-product"></select>' : '') +
+      '<div class="cart-add-row">' +
+        '<select class="cart-unit"></select>' +
+        '<div class="qty-stepper">' +
+          '<button type="button" class="qty-btn" data-step="-1">−</button>' +
+          '<input type="number" class="qty-input" value="1" min="1" max="999" inputmode="numeric">' +
+          '<button type="button" class="qty-btn" data-step="1">+</button>' +
+        '</div>' +
+      '</div>' +
+      '<button type="button" class="btn btn-primary full cart-add-btn"></button>';
+
+    const productSel = box.querySelector('.cart-product');
+    const unitSel = box.querySelector('.cart-unit');
+    const qtyInput = box.querySelector('.qty-input');
+    const addBtn = box.querySelector('.cart-add-btn');
+    const decBtn = box.querySelector('[data-step="-1"]');
+    const incBtn = box.querySelector('[data-step="1"]');
+    let flashTimer = null;
+
+    const currentId = () => productSel ? productSel.value : pids[0];
+
+    function fillUnits(lang){
+      const prev = unitSel.value;
+      const units = CART_PRODUCTS[currentId()].units;
+      unitSel.innerHTML = units.map(u => '<option value="' + u + '">' + CART_UNITS[u][lang] + '</option>').join('');
+      if(units.includes(prev)) unitSel.value = prev;
+    }
+
+    function refresh(lang){
+      const t = CART_TEXT[lang];
+      if(productSel){
+        const prev = productSel.value || pids[0];
+        productSel.innerHTML = pids.map(id => '<option value="' + id + '">' + CART_PRODUCTS[id][lang] + '</option>').join('');
+        productSel.value = prev;
+        productSel.setAttribute('aria-label', t.product);
+      }
+      fillUnits(lang);
+      unitSel.setAttribute('aria-label', t.unit);
+      qtyInput.setAttribute('aria-label', t.qty);
+      decBtn.setAttribute('aria-label', t.dec);
+      incBtn.setAttribute('aria-label', t.inc);
+      if(!flashTimer) addBtn.textContent = t.add;
+    }
+
+    if(productSel) productSel.addEventListener('change', () => fillUnits(currentLang()));
+    box.querySelectorAll('.qty-btn').forEach(b => b.addEventListener('click', () => {
+      qtyInput.value = clampQty(clampQty(qtyInput.value) + parseInt(b.dataset.step, 10));
+    }));
+    qtyInput.addEventListener('change', () => { qtyInput.value = clampQty(qtyInput.value); });
+
+    addBtn.addEventListener('click', () => {
+      const qty = clampQty(qtyInput.value);
+      qtyInput.value = qty;
+      addToCart(currentId(), unitSel.value, qty);
+      addBtn.textContent = CART_TEXT[currentLang()].added;
+      addBtn.classList.add('added');
+      clearTimeout(flashTimer);
+      flashTimer = setTimeout(() => {
+        flashTimer = null;
+        addBtn.classList.remove('added');
+        addBtn.textContent = CART_TEXT[currentLang()].add;
+      }, 1200);
+    });
+
+    cartAddBoxes.push({ refresh });
+  }
+
+  function renderCart(){
+    const lang = currentLang();
+    const t = CART_TEXT[lang];
+    const list = document.getElementById('cartItems');
+    const empty = document.getElementById('cartEmpty');
+    const form = document.getElementById('cartForm');
+    const badge = document.getElementById('cartBadge');
+    const fab = document.getElementById('cartFab');
+    const total = cart.length;
+
+    badge.textContent = total;
+    badge.hidden = total === 0;
+    fab.setAttribute('aria-label', total ? t.open + ' — ' + t.items(total) : t.open);
+
+    empty.hidden = total > 0;
+    form.hidden = total === 0;
+
+    list.innerHTML = cart.map((it, i) => {
+      const p = CART_PRODUCTS[it.id];
+      return '<li class="cart-item" data-idx="' + i + '">' +
+        '<div class="cart-item-info">' +
+          '<span class="cart-item-icon" aria-hidden="true">' + p.icon + '</span>' +
+          '<div><strong>' + p[lang] + '</strong><small>' + CART_UNITS[it.unit][lang] + '</small></div>' +
+        '</div>' +
+        '<div class="cart-item-ctrl">' +
+          '<div class="qty-stepper sm">' +
+            '<button type="button" class="qty-btn" data-act="dec" aria-label="' + t.dec + '">−</button>' +
+            '<input type="number" class="qty-input" data-act="set" value="' + it.qty + '" min="1" max="999" inputmode="numeric" aria-label="' + t.qty + '">' +
+            '<button type="button" class="qty-btn" data-act="inc" aria-label="' + t.inc + '">+</button>' +
+          '</div>' +
+          '<button type="button" class="cart-remove" data-act="remove" aria-label="' + t.remove + '">&times;</button>' +
+        '</div>' +
+      '</li>';
+    }).join('');
+  }
+
+  function refreshCartLang(lang){
+    cartAddBoxes.forEach(b => b.refresh(lang));
+    renderCart();
+  }
+
+  function openCart(){
+    const o = document.getElementById('cartOverlay');
+    o.hidden = false;
+    document.body.style.overflow = 'hidden';
+    const s = document.getElementById('cartSuccess');
+    if(s) s.hidden = true;
+    const c = o.querySelector('.cart-close');
+    if(c) c.focus();
+  }
+
+  function closeCart(){
+    document.getElementById('cartOverlay').hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  function clearCart(){
+    cart = [];
+    saveCart();
+    renderCart();
+  }
+
+  function handleCartCheckout(event, form){
+    event.preventDefault();
+    if(!cart.length) return;
+    const lang = currentLang();
+    const name = form.querySelector('[name="name"]').value.trim();
+    const phone = form.querySelector('[name="phone"]').value.trim();
+    const address = form.querySelector('[name="address"]').value.trim();
+    const note = form.querySelector('[name="note"]').value.trim();
+
+    const lines = cart.map((it, i) =>
+      (i + 1) + '. ' + CART_PRODUCTS[it.id][lang] + ' — ' + it.qty + ' × ' + CART_UNITS[it.unit][lang]
+    ).join('\n');
+
+    const message = lang === 'hi'
+      ? `नया ऑर्डर (वेबसाइट कार्ट से):\nनाम: ${name}\nफोन: ${phone}\nडिलीवरी पता: ${address}\n\nसामान:\n${lines}` +
+        (note ? `\n\nनोट: ${note}` : '') + `\n\nकृपया आज का रेट और उपलब्धता कन्फर्म करें।`
+      : `New Order (from Website Cart):\nName: ${name}\nPhone: ${phone}\nDelivery address: ${address}\n\nItems:\n${lines}` +
+        (note ? `\n\nNote: ${note}` : '') + `\n\nPlease confirm today's rate and availability.`;
+
+    window.open('https://wa.me/' + OWNER_PHONE + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
+
+    const s = document.getElementById('cartSuccess');
+    s.textContent = CART_TEXT[lang].sent;
+    s.hidden = false;
+    s.classList.remove('pop-in'); void s.offsetWidth; s.classList.add('pop-in');
+  }
+
+  document.querySelectorAll('[data-cart-add]').forEach(initCartAdd);
+
+  const cartItemsEl = document.getElementById('cartItems');
+  cartItemsEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-act]');
+    if(!btn || btn.tagName === 'INPUT') return;
+    const li = btn.closest('.cart-item');
+    const idx = li ? parseInt(li.dataset.idx, 10) : -1;
+    if(!cart[idx]) return;
+    const act = btn.dataset.act;
+    if(act === 'inc') cart[idx].qty = clampQty(cart[idx].qty + 1);
+    else if(act === 'dec') cart[idx].qty = clampQty(cart[idx].qty - 1);
+    else if(act === 'remove') cart.splice(idx, 1);
+    saveCart();
+    renderCart();
+  });
+  cartItemsEl.addEventListener('change', (e) => {
+    if(e.target.dataset.act !== 'set') return;
+    const li = e.target.closest('.cart-item');
+    const idx = li ? parseInt(li.dataset.idx, 10) : -1;
+    if(!cart[idx]) return;
+    cart[idx].qty = clampQty(e.target.value);
+    saveCart();
+    renderCart();
+  });
+
+  document.getElementById('cartOverlay').addEventListener('click', (e) => {
+    if(e.target.id === 'cartOverlay') closeCart();
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && !document.getElementById('cartOverlay').hidden) closeCart();
+  });
+
+  /* ============================================================
+     BACKGROUND MUSIC (copyright-free)
+     - If you add a file at audio/bgm.mp3 it plays that.
+     - Otherwise it plays an original ambient tune generated live
+       in the browser (Web Audio), so there is nothing to license.
+     Set BGM_FILE = '' to always use the built-in tune.
+  ============================================================ */
+  const BGM_FILE = 'audio/bgm.mp3';
+  const BGM_VOLUME = 0.35;               // 0 (silent) to 1 (full)
+  const MUSIC_KEY = 'apnaOilMusic';
+
+  const MUSIC_TEXT = {
+    en: { on: 'Pause background music', off: 'Play background music' },
+    hi: { on: 'बैकग्राउंड म्यूज़िक बंद करें', off: 'बैकग्राउंड म्यूज़िक चलाएँ' }
+  };
+
+  const bgm = (function(){
+    let wanted = false, fileEl = null, fileFailed = false, fadeTimer = null;
+    let ctx = null, master = null, bus = null, sched = null;
+    let nextPluck = 0, nextNote = 0, pluckI = 0, noteI = 3;
+
+    const SA = 130.81; // C3 — the drone / tonic
+    const PLUCK = [SA * 1.5, SA * 2, SA * 2, SA, 0];                  // tanpura-style cycle
+    const SCALE = [261.63, 293.66, 329.63, 392.00, 440.00,
+                   523.25, 587.33, 659.25, 783.99, 880.00];          // C D E G A (pentatonic)
+
+    /* ---------- file mode ---------- */
+    function fadeFile(target, done){
+      clearInterval(fadeTimer);
+      fadeTimer = setInterval(() => {
+        if(!fileEl){ clearInterval(fadeTimer); return; }
+        const v = fileEl.volume;
+        const nv = v < target ? Math.min(target, v + 0.03) : Math.max(target, v - 0.03);
+        fileEl.volume = nv;
+        if(nv === target){ clearInterval(fadeTimer); if(done) done(); }
+      }, 50);
+    }
+
+    function startFile(){
+      if(!fileEl){
+        fileEl = new Audio(BGM_FILE);
+        fileEl.loop = true;
+        fileEl.preload = 'auto';
+        fileEl.addEventListener('error', () => {
+          fileFailed = true; fileEl = null;
+          if(wanted) startSynth();
+        });
+      }
+      fileEl.volume = 0;
+      const p = fileEl.play();
+      if(p && p.catch) p.catch(err => {
+        if(!err) return;
+        if(err.name === 'NotAllowedError'){ wanted = false; syncUI(); }
+        else if(err.name === 'NotSupportedError'){ fileFailed = true; fileEl = null; if(wanted) startSynth(); }
+      });
+      fadeFile(BGM_VOLUME);
+    }
+
+    function stopFile(){
+      if(!fileEl) return;
+      const el = fileEl;
+      fadeFile(0, () => { try { el.pause(); } catch(e) {} });
+    }
+
+    /* ---------- generated tune ---------- */
+    function buildSynth(AC){
+      ctx = new AC();
+      master = ctx.createGain();
+      master.gain.value = 0;
+      const comp = ctx.createDynamicsCompressor();
+      master.connect(comp);
+      comp.connect(ctx.destination);
+
+      // soft echo for a spacious feel
+      bus = ctx.createGain();
+      bus.connect(master);
+      const delay = ctx.createDelay(1.5); delay.delayTime.value = 0.45;
+      const fb = ctx.createGain(); fb.gain.value = 0.4;
+      const wet = ctx.createGain(); wet.gain.value = 0.35;
+      bus.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(master);
+
+      // steady drone (Sa + Pa)
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 700;
+      const droneGain = ctx.createGain(); droneGain.gain.value = 0.16;
+      lp.connect(droneGain); droneGain.connect(master);
+      [[SA / 2, 'sine', 0.9], [SA, 'triangle', 0.7], [SA * 1.5, 'sine', 0.55], [SA * 2, 'sine', 0.35]].forEach((v, i) => {
+        const o = ctx.createOscillator(); o.type = v[1]; o.frequency.value = v[0]; o.detune.value = i % 2 ? 4 : -4;
+        const g = ctx.createGain(); g.gain.value = v[2];
+        o.connect(g); g.connect(lp); o.start();
+      });
+      // slow "breathing" of the drone
+      const lfo = ctx.createOscillator(); lfo.frequency.value = 0.07;
+      const lfoGain = ctx.createGain(); lfoGain.gain.value = 0.05;
+      lfo.connect(lfoGain); lfoGain.connect(droneGain.gain); lfo.start();
+    }
+
+    function voice(freq, when, peak, dur, type, cutoff, attack){
+      const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
+      o.type = type; o.frequency.value = freq;
+      f.type = 'lowpass'; f.frequency.value = cutoff;
+      g.gain.setValueAtTime(0.0001, when);
+      g.gain.linearRampToValueAtTime(peak, when + attack);
+      g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+      o.connect(f); f.connect(g); g.connect(bus);
+      o.start(when); o.stop(when + dur + 0.05);
+    }
+
+    function tick(){
+      if(!ctx) return;
+      const horizon = ctx.currentTime + 1.2;
+      while(nextPluck < horizon){
+        const f = PLUCK[pluckI % PLUCK.length];
+        pluckI++;
+        if(f) voice(f, nextPluck, 0.2, 2.6, 'triangle', 1800, 0.006);
+        nextPluck += f ? 0.9 : 1.6;
+      }
+      while(nextNote < horizon){
+        if(Math.random() < 0.22){ nextNote += 0.9; continue; }
+        noteI = Math.max(0, Math.min(SCALE.length - 1, noteI + [-2, -1, -1, 0, 1, 1, 2][Math.floor(Math.random() * 7)]));
+        const dur = 1.4 + Math.random() * 1.4;
+        voice(SCALE[noteI], nextNote, 0.16, dur, 'sine', 2400, 0.04);
+        voice(SCALE[noteI] * 2, nextNote, 0.03, dur * 0.6, 'sine', 3000, 0.04);
+        nextNote += [0.9, 1.2, 1.8][Math.floor(Math.random() * 3)];
+      }
+    }
+
+    function startSynth(){
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if(!AC) return;
+      if(!ctx) buildSynth(AC);
+      if(ctx.resume) ctx.resume();
+      const t = ctx.currentTime;
+      master.gain.cancelScheduledValues(t);
+      master.gain.setValueAtTime(master.gain.value, t);
+      master.gain.linearRampToValueAtTime(BGM_VOLUME, t + 2);
+      nextPluck = t + 0.1;
+      nextNote = t + 1.5;
+      clearInterval(sched);
+      sched = setInterval(tick, 250);
+      tick();
+    }
+
+    function stopSynth(){
+      if(!ctx) return;
+      const t = ctx.currentTime;
+      master.gain.cancelScheduledValues(t);
+      master.gain.setValueAtTime(master.gain.value, t);
+      master.gain.linearRampToValueAtTime(0, t + 0.8);
+      clearInterval(sched);
+      setTimeout(() => { if(!wanted && ctx && ctx.suspend) ctx.suspend(); }, 1000);
+    }
+
+    /* ---------- public ---------- */
+    function start(){
+      wanted = true;
+      if(BGM_FILE && !fileFailed) startFile(); else startSynth();
+    }
+    function stop(){
+      wanted = false;
+      stopFile();
+      stopSynth();
+    }
+
+    // pause when the tab is in the background
+    document.addEventListener('visibilitychange', () => {
+      if(!wanted) return;
+      if(document.hidden){
+        if(fileEl) fileEl.pause();
+        if(ctx && ctx.suspend) ctx.suspend();
+      } else {
+        if(fileEl){ const p = fileEl.play(); if(p && p.catch) p.catch(() => {}); }
+        if(ctx && ctx.resume) ctx.resume();
+      }
+    });
+
+    return { start, stop, isOn: () => wanted };
+  })();
+
+  const musicFab = document.getElementById('musicFab');
+  let musicArmed = null;
+
+  function syncUI(){
+    const on = bgm.isOn();
+    musicFab.classList.toggle('on', on);
+    musicFab.setAttribute('aria-pressed', on ? 'true' : 'false');
+    const t = MUSIC_TEXT[currentLang()];
+    musicFab.setAttribute('aria-label', on ? t.on : t.off);
+    musicFab.title = on ? t.on : t.off;
+  }
+
+  function refreshMusicLang(){ syncUI(); }
+
+  function disarmMusic(){
+    if(!musicArmed) return;
+    document.removeEventListener('pointerdown', musicArmed);
+    document.removeEventListener('keydown', musicArmed);
+    musicArmed = null;
+  }
+
+  function toggleMusic(){
+    disarmMusic();
+    if(bgm.isOn()){
+      bgm.stop();
+      try { localStorage.setItem(MUSIC_KEY, 'off'); } catch(e) {}
+    } else {
+      bgm.start();
+      try { localStorage.setItem(MUSIC_KEY, 'on'); } catch(e) {}
+    }
+    syncUI();
+  }
+
+  // Browsers block sound until the visitor interacts. If they had music on
+  // last time, resume it on their first tap / key press.
+  (function(){
+    let saved = null;
+    try { saved = localStorage.getItem(MUSIC_KEY); } catch(e) {}
+    if(saved !== 'on') return;
+    musicArmed = function(e){
+      if(e && e.target && e.target.closest && e.target.closest('#musicFab')) return;
+      disarmMusic();
+      if(!bgm.isOn()){ bgm.start(); syncUI(); }
+    };
+    document.addEventListener('pointerdown', musicArmed);
+    document.addEventListener('keydown', musicArmed);
+  })();
+
+  let savedLang = 'en';
+  try { savedLang = localStorage.getItem('apnaOilLang') || 'en'; } catch(e) {}
+  setLanguage(savedLang);
+
+  /* ============================================================
+     HERO SLIDESHOW — change HERO_INTERVAL (milliseconds) for speed
+  ============================================================ */
+  const HERO_INTERVAL = 2800;
+  (function(){
+    const box = document.getElementById('heroSlider');
+    if(!box) return;
+    const visual = box.closest('.hero-visual');
+    const dotsWrap = document.getElementById('heroDots');
+    let slides = Array.from(box.querySelectorAll('.hero-slide'));
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const interval = reduce ? Math.max(HERO_INTERVAL, 5000) : HERO_INTERVAL;
+    box.style.setProperty('--hero-interval', interval + 'ms');
+    let cur = 0, timer = null, dots = [];
+
+    function fallback(){
+      visual.classList.remove('has-photo');
+      box.remove();
+    }
+
+    function buildDots(){
+      dotsWrap.innerHTML = '';
+      dots = slides.map((s, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'hero-dot';
+        b.setAttribute('aria-label', 'Photo ' + (i + 1));
+        b.addEventListener('click', () => { go(i); schedule(); });
+        dotsWrap.appendChild(b);
+        return b;
+      });
+    }
+
+    function go(n){
+      slides.forEach(s => s.classList.remove('active'));
+      cur = ((n % slides.length) + slides.length) % slides.length;
+      const s = slides[cur];
+      void s.offsetWidth;
+      s.classList.add('active');
+      dots.forEach(d => d.classList.remove('active'));
+      void dots[cur].offsetWidth;
+      dots[cur].classList.add('active');
+    }
+
+    function schedule(){
+      clearTimeout(timer);
+      if(slides.length < 2) return;
+      timer = setTimeout(() => {
+        if(!document.hidden && !box.classList.contains('paused')) go(cur + 1);
+        schedule();
+      }, interval);
+    }
+
+    function dropSlide(slide){
+      const idx = slides.indexOf(slide);
+      if(idx === -1) return;
+      slides.splice(idx, 1);
+      slide.remove();
+      if(!slides.length){ clearTimeout(timer); fallback(); return; }
+      buildDots();
+      go(Math.min(cur, slides.length - 1));
+      schedule();
+    }
+
+    slides.slice().forEach(slide => {
+      const img = slide.querySelector('img');
+      if(img.complete && img.naturalWidth === 0) { dropSlide(slide); return; }
+      img.addEventListener('error', () => dropSlide(slide));
+    });
+    if(!slides.length) return;
+
+    buildDots();
+    go(0);
+    schedule();
+
+    // pause while hovering / touching
+    box.addEventListener('mouseenter', () => box.classList.add('paused'));
+    box.addEventListener('mouseleave', () => { box.classList.remove('paused'); schedule(); });
+
+    // swipe on mobile
+    let sx = null;
+    box.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', e => {
+      if(sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      sx = null;
+      if(Math.abs(dx) > 40){ go(cur + (dx < 0 ? 1 : -1)); schedule(); }
+    }, { passive: true });
+  })();
+
+  const siteHeader = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 24);
+  }, { passive: true });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('revealed'));
+  }
+</script>
+</body>
+</html>
