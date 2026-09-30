@@ -303,6 +303,47 @@ body {
 /* ============================================================
    BANNERS & STRIPS
    ============================================================ */
+.brand-banner {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+  max-height: 320px;
+}
+
+.brand-banner img {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+  transition: transform 8s ease;
+}
+
+.brand-banner:hover img {
+  transform: scale(1.08);
+}
+
+.brand-banner-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.22) 50%, transparent 60%);
+  background-size: 250% 250%;
+  background-position: -100% -100%;
+  animation: bannerShine 5s ease-in-out 1s infinite;
+  pointer-events: none;
+}
+
+@keyframes bannerShine {
+  0% { background-position: -100% -100%; }
+  55%, 100% { background-position: 150% 150%; }
+}
+
+@media (max-width: 640px) {
+  .brand-banner { max-height: 200px; }
+  .brand-banner img { max-height: 200px; }
+}
+
 .purity-banner {
   background: var(--gold-light);
   border-top: 1px solid #E6D59C;
@@ -738,6 +779,26 @@ body {
   gap: 15px;
 }
 
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(7, 56, 42, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 26px rgba(7, 56, 42, 0.22);
+}
+
+.gallery-item img {
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.09);
+}
+
 .gallery-item.placeholder {
   background: #E5E7EB;
   color: #6B7280;
@@ -830,6 +891,15 @@ body {
 .developer-card h2 {
   color: var(--gold-light);
   margin-bottom: 15px;
+}
+
+.developer-card.compact {
+  padding: 36px 30px;
+  max-width: 460px;
+}
+
+.developer-card.compact .btn {
+  margin-top: 6px;
 }
 
 .developer-card p {
