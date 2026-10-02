@@ -1431,12 +1431,11 @@
   const bgm = (function(){
     let wanted = false, fileEl = null, fileFailed = false, fadeTimer = null;
     let ctx = null, master = null, bus = null, sched = null;
-    let nextPluck = 0, nextNote = 0, pluckI = 0, noteI = 3;
+    let nextBell = 0, nextNote = 0, noteI = 3, noiseBuf = null;
 
-    const SA = 130.81; // C3 — the drone / tonic
-    const PLUCK = [SA * 1.5, SA * 2, SA * 2, SA, 0];                  // tanpura-style cycle
+    // bansuri-style flute notes: C D E G A (pentatonic), middle octave
     const SCALE = [261.63, 293.66, 329.63, 392.00, 440.00,
-                   523.25, 587.33, 659.25, 783.99, 880.00];          // C D E G A (pentatonic)
+                   523.25, 587.33, 659.25, 783.99, 880.00];
 
     /* ---------- file mode ---------- */
     function fadeFile(target, done){
@@ -1493,48 +1492,74 @@
       const wet = ctx.createGain(); wet.gain.value = 0.42;
       bus.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(master);
 
-      // steady drone (Sa + Pa)
-      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 700;
-      const droneGain = ctx.createGain(); droneGain.gain.value = 0.16;
-      lp.connect(droneGain); droneGain.connect(master);
-      [[SA / 2, 'sine', 0.9], [SA, 'triangle', 0.7], [SA * 1.5, 'sine', 0.55], [SA * 2, 'sine', 0.35]].forEach((v, i) => {
-        const o = ctx.createOscillator(); o.type = v[1]; o.frequency.value = v[0]; o.detune.value = i % 2 ? 4 : -4;
-        const g = ctx.createGain(); g.gain.value = v[2];
-        o.connect(g); g.connect(lp); o.start();
-      });
-      // slow "breathing" of the drone
-      const lfo = ctx.createOscillator(); lfo.frequency.value = 0.07;
-      const lfoGain = ctx.createGain(); lfoGain.gain.value = 0.05;
-      lfo.connect(lfoGain); lfoGain.connect(droneGain.gain); lfo.start();
+      // soft breath noise source for the flute
+      noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
+      const d = noiseBuf.getChannelData(0);
+      for(let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
     }
 
-    function voice(freq, when, peak, dur, type, cutoff, attack){
-      const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
-      o.type = type; o.frequency.value = freq;
-      f.type = 'lowpass'; f.frequency.value = cutoff;
+    // soft bansuri-like flute pad: slow breathy attack, gentle vibrato, long release
+    function flute(freq, when, peak, dur){
+      const o = ctx.createOscillator(), o2 = ctx.createOscillator();
+      const g = ctx.createGain(), f = ctx.createBiquadFilter();
+      o.type = 'sine'; o.frequency.value = freq;
+      o2.type = 'triangle'; o2.frequency.value = freq; o2.detune.value = 5;
+      f.type = 'lowpass'; f.frequency.value = 1600; f.Q.value = 0.4;
+      // vibrato that fades in after the note starts
+      const vib = ctx.createOscillator(), vg = ctx.createGain();
+      vib.frequency.value = 4.6 + Math.random() * 0.8;
+      vg.gain.setValueAtTime(0, when);
+      vg.gain.linearRampToValueAtTime(freq * 0.006, when + 1.2);
+      vib.connect(vg); vg.connect(o.frequency); vg.connect(o2.frequency);
+      const g2 = ctx.createGain(); g2.gain.value = 0.35;
+      o.connect(f); o2.connect(g2); g2.connect(f);
       g.gain.setValueAtTime(0.0001, when);
-      g.gain.linearRampToValueAtTime(peak, when + attack);
+      g.gain.linearRampToValueAtTime(peak, when + 0.9);
+      g.gain.setValueAtTime(peak, when + dur * 0.55);
       g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
-      o.connect(f); f.connect(g); g.connect(bus);
-      o.start(when); o.stop(when + dur + 0.05);
+      f.connect(g); g.connect(bus);
+      // faint breath noise
+      const n = ctx.createBufferSource(); n.buffer = noiseBuf; n.loop = true;
+      const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = freq * 2; bp.Q.value = 2;
+      const ng = ctx.createGain();
+      ng.gain.setValueAtTime(0.0001, when);
+      ng.gain.linearRampToValueAtTime(peak * 0.16, when + 0.5);
+      ng.gain.exponentialRampToValueAtTime(0.0001, when + dur * 0.8);
+      n.connect(bp); bp.connect(ng); ng.connect(bus);
+      [o, o2, vib].forEach(x => x.start(when));
+      [o, o2, vib].forEach(x => x.stop(when + dur + 0.1));
+      n.start(when); n.stop(when + dur);
+    }
+
+    // light bell chime: a few inharmonic partials with a long soft decay
+    function bell(freq, when, peak){
+      [[1, 1], [2.76, 0.35], [5.4, 0.15]].forEach(p => {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine'; o.frequency.value = freq * p[0];
+        g.gain.setValueAtTime(0.0001, when);
+        g.gain.linearRampToValueAtTime(peak * p[1], when + 0.01);
+        g.gain.exponentialRampToValueAtTime(0.0001, when + 3.8 / p[0] + 0.8);
+        o.connect(g); g.connect(bus);
+        o.start(when); o.stop(when + 4.7);
+      });
     }
 
     function tick(){
       if(!ctx) return;
       const horizon = ctx.currentTime + 1.2;
-      while(nextPluck < horizon){
-        const f = PLUCK[pluckI % PLUCK.length];
-        pluckI++;
-        if(f) voice(f, nextPluck, 0.14, 3.4, 'triangle', 1400, 0.02);
-        nextPluck += f ? 1.5 : 2.4;
-      }
+      // flute: overlapping long notes, small stepwise moves, some rests
       while(nextNote < horizon){
-        if(Math.random() < 0.3){ nextNote += 1.3; continue; }
+        if(Math.random() < 0.22){ nextNote += 1.8; continue; }
         noteI = Math.max(0, Math.min(SCALE.length - 1, noteI + [-2, -1, -1, 0, 1, 1, 2][Math.floor(Math.random() * 7)]));
-        const dur = 2.2 + Math.random() * 1.8;
-        voice(SCALE[noteI], nextNote, 0.12, dur, 'sine', 1800, 0.18);
-        voice(SCALE[noteI] * 2, nextNote, 0.02, dur * 0.6, 'sine', 2200, 0.18);
-        nextNote += [1.6, 2.0, 2.6][Math.floor(Math.random() * 3)];
+        const dur = 5 + Math.random() * 3;
+        flute(SCALE[noteI], nextNote, 0.13, dur);
+        nextNote += [3.2, 3.8, 4.6][Math.floor(Math.random() * 3)];
+      }
+      // bell: only now and then
+      while(nextBell < horizon){
+        const f = SCALE[5 + Math.floor(Math.random() * 4)] * 2; // high, light
+        bell(f, nextBell, 0.035);
+        nextBell += 14 + Math.random() * 14;
       }
     }
 
@@ -1547,8 +1572,8 @@
       master.gain.cancelScheduledValues(t);
       master.gain.setValueAtTime(master.gain.value, t);
       master.gain.linearRampToValueAtTime(BGM_VOLUME, t + 2);
-      nextPluck = t + 0.1;
-      nextNote = t + 1.5;
+      nextNote = t + 0.6;
+      nextBell = t + 9 + Math.random() * 6;
       clearInterval(sched);
       sched = setInterval(tick, 250);
       tick();
