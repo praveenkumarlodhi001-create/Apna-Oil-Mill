@@ -1,4 +1,4 @@
-/* 3D layer v3: floating seeds + sparkles, 3D cards, hero tilt. Falls back to plain site. */
+/* 3D layer v4: soft sparkles, 3D cards, hero tilt. Falls back to plain site. */
 (function(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce) return;
@@ -70,17 +70,6 @@
     var dl = new THREE.DirectionalLight(0xffffff, 1.2); dl.position.set(3, 5, 6); S.add(dl);
     var pl = new THREE.PointLight(0xd4af37, 1.6, 30); pl.position.set(-4, -2, 5); S.add(pl);
 
-    var gold = new THREE.MeshStandardMaterial({color:0xd4a017, roughness:.3, metalness:.35, emissive:0x3a2a00, emissiveIntensity:.4});
-
-    /* floating seeds */
-    var seeds = [], N = small ? 22 : 48;
-    var sg = new THREE.SphereGeometry(.2, 14, 12);
-    for(var i = 0; i < N; i++){
-      var m = new THREE.Mesh(sg, gold); m.scale.set(1, 1.2, 1);
-      m.userData = {nx:(i % 2 ? 1 : -1) * (.5 + Math.random() * .5), y0:Math.random() * 24, z:-4 + Math.random() * 6,
-        sp:.3 + Math.random() * .6, ph:Math.random() * 6.28, par:.5 + Math.random() * 1.5, ox:0, oy:0};
-      S.add(m); seeds.push(m);
-    }
     /* sparkles */
     var P = small ? 90 : 220, pos = new Float32Array(P * 3);
     for(var k = 0; k < P; k++){ pos[k*3] = (Math.random() - .5) * 26; pos[k*3+1] = (Math.random() - .5) * 16; pos[k*3+2] = -6 + Math.random() * 9; }
@@ -101,15 +90,6 @@
       requestAnimationFrame(loop);
       if(!visible) return;
       now = now || performance.now(); var dt = Math.min(.05, (now - last) / 1000); last = now; var t = now / 1000;
-      var wx = mx * 2 * halfW, wy = -my * 2 * halfH, H = halfH * 2 + 3;
-      
-      seeds.forEach(function(m){
-        var u = m.userData, x = u.nx * halfW, y = ((u.y0 - scrollY * .006 * u.par) % H + H) % H - H / 2 + Math.sin(t * u.sp + u.ph) * .5;
-        var ddx = x - wx, ddy = y - wy, dd = Math.sqrt(ddx * ddx + ddy * ddy), push = dd < 2.4 ? (2.4 - dd) / 2.4 : 0;
-        u.ox += (ddx / (dd || 1) * push * 2.2 - u.ox) * .1; u.oy += (ddy / (dd || 1) * push * 2.2 - u.oy) * .1;
-        m.position.set(x + u.ox + Math.sin(t * u.sp * .7 + u.ph) * .4, y + u.oy, u.z);
-        m.rotation.x = t * u.sp * 1.4; m.rotation.y = t * u.sp;
-      });
       sparkle.rotation.y = t * .02; sparkle.position.y = (scrollY * .0015) % 2; sparkle.material.opacity = .55 + Math.sin(t * 2) * .25;
       C.position.x += (mx * 1.2 - C.position.x) * .04; C.position.y += (-my * .8 - C.position.y) * .04; C.lookAt(0, 0, 0);
       R.render(S, C);

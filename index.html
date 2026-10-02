@@ -1433,7 +1433,7 @@
   const bgm = (function(){
     let wanted = false, fileEl = null, fileFailed = false, fadeTimer = null;
     let ctx = null, master = null, bus = null, sched = null;
-    let nextBell = 0, nextNote = 0, noteI = 3, noiseBuf = null;
+    let nextBell = 0, nextNote = 0, noiseBuf = null, q = [];
 
     // bansuri-style flute notes: C D E G A (pentatonic), middle octave
     const SCALE = [261.63, 293.66, 329.63, 392.00, 440.00,
@@ -1500,43 +1500,58 @@
       for(let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
     }
 
-    // soft bansuri-like flute pad: slow breathy attack, gentle vibrato, long release
-    function flute(freq, when, peak, dur){
-      const o = ctx.createOscillator(), o2 = ctx.createOscillator();
-      const g = ctx.createGain(), f = ctx.createBiquadFilter();
-      o.type = 'sine'; o.frequency.value = freq;
-      o2.type = 'triangle'; o2.frequency.value = freq; o2.detune.value = 5;
-      f.type = 'lowpass'; f.frequency.value = 1600; f.Q.value = 0.4;
-      // vibrato that fades in after the note starts
-      const vib = ctx.createOscillator(), vg = ctx.createGain();
-      vib.frequency.value = 4.6 + Math.random() * 0.8;
-      vg.gain.setValueAtTime(0, when);
-      vg.gain.linearRampToValueAtTime(freq * 0.006, when + 1.2);
+    // one bansuri note: breathy chiff, glide (meend) from the previous note, delayed vibrato, swell
+    function note(freq, from, when, dur, peak, glide){
+      var o = ctx.createOscillator(), o2 = ctx.createOscillator(), o3 = ctx.createOscillator();
+      var g = ctx.createGain(), f = ctx.createBiquadFilter(), g2 = ctx.createGain(), g3 = ctx.createGain();
+      o.type = 'sine'; o2.type = 'triangle'; o2.detune.value = 4; o3.type = 'sine';
+      [o, o2].forEach(function(x){ x.frequency.setValueAtTime(from || freq, when); if(from) x.frequency.exponentialRampToValueAtTime(freq, when + (glide || .14)); });
+      o3.frequency.setValueAtTime((from || freq) * 2, when); if(from) o3.frequency.exponentialRampToValueAtTime(freq * 2, when + (glide || .14));
+      g2.gain.value = .3; g3.gain.value = .07;
+      f.type = 'lowpass'; f.frequency.value = 2300; f.Q.value = .5;
+      var vib = ctx.createOscillator(), vg = ctx.createGain();
+      vib.frequency.value = 5 + Math.random() * .8;
+      vg.gain.setValueAtTime(0, when); vg.gain.setValueAtTime(0, when + Math.min(.35, dur * .4));
+      vg.gain.linearRampToValueAtTime(freq * .008, when + Math.min(.9, dur * .8));
       vib.connect(vg); vg.connect(o.frequency); vg.connect(o2.frequency);
-      const g2 = ctx.createGain(); g2.gain.value = 0.35;
-      o.connect(f); o2.connect(g2); g2.connect(f);
-      g.gain.setValueAtTime(0.0001, when);
-      g.gain.linearRampToValueAtTime(peak, when + 0.9);
-      g.gain.setValueAtTime(peak, when + dur * 0.55);
-      g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+      o.connect(f); o2.connect(g2); g2.connect(f); o3.connect(g3); g3.connect(f);
+      var att = Math.min(.16, dur * .3), rel = .45;
+      g.gain.setValueAtTime(.0001, when);
+      g.gain.linearRampToValueAtTime(peak, when + att);
+      g.gain.linearRampToValueAtTime(peak * .78, when + dur * .55);
+      g.gain.linearRampToValueAtTime(peak * .92, when + dur * .85);   // little swell before release
+      g.gain.exponentialRampToValueAtTime(.0001, when + dur + rel);
       f.connect(g); g.connect(bus);
-      // faint breath noise
-      const n = ctx.createBufferSource(); n.buffer = noiseBuf; n.loop = true;
-      const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = freq * 2; bp.Q.value = 2;
-      const ng = ctx.createGain();
-      ng.gain.setValueAtTime(0.0001, when);
-      ng.gain.linearRampToValueAtTime(peak * 0.16, when + 0.5);
-      ng.gain.exponentialRampToValueAtTime(0.0001, when + dur * 0.8);
+      // chiff + steady breath
+      var n = ctx.createBufferSource(); n.buffer = noiseBuf; n.loop = true;
+      var bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = freq * 2.4; bp.Q.value = 1.6;
+      var ng = ctx.createGain();
+      ng.gain.setValueAtTime(.0001, when);
+      ng.gain.linearRampToValueAtTime(peak * .55, when + .015);
+      ng.gain.exponentialRampToValueAtTime(peak * .12, when + .12);
+      ng.gain.linearRampToValueAtTime(peak * .14, when + dur * .5);
+      ng.gain.exponentialRampToValueAtTime(.0001, when + dur + rel);
       n.connect(bp); bp.connect(ng); ng.connect(bus);
-      [o, o2, vib].forEach(x => x.start(when));
-      [o, o2, vib].forEach(x => x.stop(when + dur + 0.1));
-      n.start(when); n.stop(when + dur);
+      var end = when + dur + rel + .1;
+      [o, o2, o3, vib].forEach(function(x){ x.start(when); x.stop(end); });
+      n.start(when, Math.random() * 1.5); n.stop(end);
+    }
+
+    // soft low flute pad that blooms under a phrase (not a continuous drone)
+    function pad(freq, when, dur){
+      var o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
+      o.type = 'sine'; o.frequency.value = freq; f.type = 'lowpass'; f.frequency.value = 600;
+      g.gain.setValueAtTime(.0001, when);
+      g.gain.linearRampToValueAtTime(.05, when + 1.8);
+      g.gain.linearRampToValueAtTime(.05, when + dur);
+      g.gain.exponentialRampToValueAtTime(.0001, when + dur + 2.2);
+      o.connect(f); f.connect(g); g.connect(bus); o.start(when); o.stop(when + dur + 2.4);
     }
 
     // light bell chime: a few inharmonic partials with a long soft decay
     function bell(freq, when, peak){
-      [[1, 1], [2.76, 0.35], [5.4, 0.15]].forEach(p => {
-        const o = ctx.createOscillator(), g = ctx.createGain();
+      [[1, 1], [2.76, 0.35], [5.4, 0.15]].forEach(function(p){
+        var o = ctx.createOscillator(), g = ctx.createGain();
         o.type = 'sine'; o.frequency.value = freq * p[0];
         g.gain.setValueAtTime(0.0001, when);
         g.gain.linearRampToValueAtTime(peak * p[1], when + 0.01);
@@ -1546,21 +1561,49 @@
       });
     }
 
+    // little melodies in a Bhoopali-like colour (C D E G A): [scale index, beats, glide-in?]
+    var PHRASES = [
+      [[0,2],[1,1,1],[2,2],[1,1,1],[0,3]],
+      [[2,1.5],[3,1,1],[4,2.5],[3,1,1],[2,1.5],[0,3]],
+      [[4,2],[5,1,1],[6,1,1],[5,1.5],[4,1.5],[3,3]],
+      [[5,1],[6,1],[7,2.5],[6,1],[5,1,1],[4,1.5],[3,1],[2,3]],
+      [[3,1.5],[4,1],[5,3],[7,1.5,1],[5,1],[4,2],[2,3]],
+      [[0,1.5],[2,1,1],[3,1],[4,2.5,1],[3,1],[2,1,1],[1,1],[0,3.5]]
+    ];
+    var BEAT = .72, lastPhrase = -1, lastFreq = 0;
+
+    function queuePhrase(start){
+      var pi; do { pi = Math.floor(Math.random() * PHRASES.length); } while(pi === lastPhrase); lastPhrase = pi;
+      var ph = PHRASES[pi], t = start, prev = 0, total = 0;
+      var lift = Math.random() < .25 ? 1 : 0;                       // sometimes play the phrase a step higher
+      ph.forEach(function(n, i){
+        var idx = Math.min(SCALE.length - 1, n[0] + lift), fr = SCALE[idx], dur = n[1] * BEAT * (.92 + Math.random() * .16);
+        if(i > 0 && Math.random() < .28){                           // quick grace note (kan) leaning into the note
+          var gr = SCALE[Math.min(SCALE.length - 1, idx + 1)];
+          q.push({t:t, fr:gr, from:0, dur:.17, pk:.07, gl:.05}); t += .15; prev = gr;
+        }
+        q.push({t:t, fr:fr, from: n[2] || prev ? prev : 0, dur:dur, pk:.13 + Math.random() * .03, gl: n[2] ? .22 : .1});
+        prev = fr; t += dur; total += dur;
+      });
+      q.push({t:start, pad:SCALE[Math.max(0, ph[0][0] + lift)] / 2, dur:total + .5});
+      return t;                                                      // end time of the phrase
+    }
+
     function tick(){
       if(!ctx) return;
-      const horizon = ctx.currentTime + 1.2;
-      // flute: overlapping long notes, small stepwise moves, some rests
-      while(nextNote < horizon){
-        if(Math.random() < 0.22){ nextNote += 1.8; continue; }
-        noteI = Math.max(0, Math.min(SCALE.length - 1, noteI + [-2, -1, -1, 0, 1, 1, 2][Math.floor(Math.random() * 7)]));
-        const dur = 5 + Math.random() * 3;
-        flute(SCALE[noteI], nextNote, 0.13, dur);
-        nextNote += [3.2, 3.8, 4.6][Math.floor(Math.random() * 3)];
+      var horizon = ctx.currentTime + 1.2;
+      if(nextNote < horizon && q.length < 2){
+        var end = queuePhrase(Math.max(nextNote, ctx.currentTime + .1));
+        nextNote = end + 2.2 + Math.random() * 3.2;                  // rest between phrases
+      }
+      q.sort(function(a, b){ return a.t - b.t; });
+      while(q.length && q[0].t < horizon){
+        var e = q.shift(); if(e.t < ctx.currentTime - .5) continue;
+        if(e.pad) pad(e.pad, e.t, e.dur); else note(e.fr, e.from, e.t, e.dur, e.pk, e.gl);
       }
       // bell: only now and then
       while(nextBell < horizon){
-        const f = SCALE[5 + Math.floor(Math.random() * 4)] * 2; // high, light
-        bell(f, nextBell, 0.035);
+        bell(SCALE[5 + Math.floor(Math.random() * 4)] * 2, nextBell, 0.035);
         nextBell += 14 + Math.random() * 14;
       }
     }
@@ -1574,7 +1617,7 @@
       master.gain.cancelScheduledValues(t);
       master.gain.setValueAtTime(master.gain.value, t);
       master.gain.linearRampToValueAtTime(BGM_VOLUME, t + 2);
-      nextNote = t + 0.6;
+      q = []; nextNote = t + 0.6;
       nextBell = t + 9 + Math.random() * 6;
       clearInterval(sched);
       sched = setInterval(tick, 250);
