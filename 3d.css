@@ -1,0 +1,46 @@
+/* ===== 3D layer v2 for Apna Oil Mill (delete 3d.css + 3d.js and their 2 link lines to undo) ===== */
+#d3bg{position:fixed;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+#d3glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;z-index:2;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,175,55,.22),transparent 62%);opacity:0;transition:opacity .4s;will-change:transform}
+#d3bar{position:fixed;top:0;left:0;height:4px;width:100%;z-index:2001;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,#0b4d3b,#d4af37,#f3e6b8);box-shadow:0 2px 8px rgba(212,175,55,.6);pointer-events:none}
+
+/* hero */
+.hero{perspective:1200px}
+.hero-visual{rotate:0 1 0 var(--hry,0deg);transition:rotate .25s ease-out}
+.hero-text h1{transform-origin:50% 100%;animation:d3title 1.2s cubic-bezier(.2,.8,.2,1) .15s both;
+  text-shadow:0 1px 0 rgba(0,0,0,.18),0 2px 0 rgba(0,0,0,.14),0 3px 0 rgba(0,0,0,.10),0 10px 16px rgba(0,0,0,.20)}
+@keyframes d3title{from{opacity:0;transform:perspective(700px) rotateX(-75deg) translateY(36px)}to{opacity:1;transform:perspective(700px) rotateX(0) translateY(0)}}
+
+/* cards: 3D reveal (alternating sides) + scroll tilt + hover tilt + idle float */
+.d3{transform-style:preserve-3d;position:relative}
+.d3.reveal{transform:perspective(900px) translateY(60px) rotateX(24deg) rotateY(var(--ry0,0deg)) scale(.9)}
+.d3:nth-child(odd){--ry0:-28deg}.d3:nth-child(even){--ry0:28deg}
+.d3.reveal.revealed{
+  transform:perspective(900px) rotateX(calc(var(--rx,0deg) + var(--sx,0deg))) rotateY(var(--ry,0deg)) translateZ(0);
+  transition:opacity .7s ease,transform .22s ease-out,box-shadow .3s ease;
+  box-shadow:var(--d3sh,0 8px 20px rgba(0,0,0,.12));
+  animation:d3bob 6s ease-in-out var(--bd,0s) infinite}
+@keyframes d3bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.d3.tilting.revealed{--d3sh:0 28px 46px rgba(0,0,0,.30),0 0 0 1px rgba(212,175,55,.5),0 0 28px rgba(212,175,55,.25);animation-play-state:paused}
+.d3 .card-photo,.d3 img{transform:translateZ(30px);transition:transform .3s ease}
+.d3.tilting .card-photo{transform:translateZ(60px) scale(1.05)}
+.d3 h3,.d3 h4{transform:translateZ(22px)}
+.d3::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,236,170,.38),transparent 55%)}
+.d3.tilting::after{opacity:1}
+
+/* buttons: 3D press + shine sweep */
+.btn{position:relative;overflow:hidden;box-shadow:0 5px 0 rgba(0,0,0,.30),0 12px 18px rgba(0,0,0,.20);transition:transform .12s,box-shadow .12s}
+.btn::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;transform:skewX(-20deg);pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:d3shine 3.6s ease-in-out infinite}
+@keyframes d3shine{0%,55%{left:-70%}100%{left:140%}}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 0 rgba(0,0,0,.30),0 16px 22px rgba(0,0,0,.22)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.30),0 3px 6px rgba(0,0,0,.2)}
+
+.section h2{transform:translateY(var(--hy,0px)) rotateX(var(--hx,0deg));transform-origin:50% 100%;will-change:transform}
+
+@media (max-width:700px){#d3glow{display:none}}
+@media (prefers-reduced-motion:reduce){
+  #d3bg,#d3glow,#d3bar{display:none}.hero-visual{rotate:none}.hero-text h1,.btn::after{animation:none}
+  .d3.reveal,.d3.reveal.revealed{transform:none!important;animation:none}.section h2{transform:none}}
