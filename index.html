@@ -10,14 +10,61 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 <link rel="apple-touch-icon" href="images/logo.png">
+<link rel="canonical" href="https://apna-oil-mill.vercel.app/">
 <meta property="og:title" content="Apna Oil Mill | Mustard Oil, Khal, Rice &amp; Seed Trading — Bigrau, Siyana">
 <meta property="og:description" content="Pure, cold-pressed mustard oil, khal, rice and seed trading from Bigrau, Siyana, Bulandshahr. Proprietor: Mr. Kiranpal Singh.">
-<meta property="og:image" content="images/banner.png">
+<meta property="og:image" content="https://apna-oil-mill.vercel.app/images/banner.png">
+<meta property="og:url" content="https://apna-oil-mill.vercel.app/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="images/banner.png">
+<meta name="twitter:image" content="https://apna-oil-mill.vercel.app/images/banner.png">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="mustard oil Bigrau, sarso tel Siyana, oil mill Bulandshahr, khal supplier UP, mustard seed trading, Apna Oil Mill">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Apna Oil Mill",
+  "image": "https://apna-oil-mill.vercel.app/images/banner.png",
+  "url": "https://apna-oil-mill.vercel.app/",
+  "description": "Pure, cold-pressed mustard oil, khal, rice and mustard seed trading in Bigrau, Siyana, Bulandshahr, Uttar Pradesh.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Near Bhagwant Singh Inter College, Bigrau",
+    "addressLocality": "Siyana",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.584141,
+    "longitude": 78.070747
+  },
+  "telephone": "+919456603818",
+  "priceRange": "₹₹",
+  "areaServed": "Bulandshahr district",
+  "founder": {
+    "@type": "Person",
+    "name": "Kiranpal Singh"
+  }
+}
+</script>
 </head>
 <body>
+<script>
+  (function(){
+    try {
+      var saved = localStorage.getItem('apnaOilTheme');
+      if(saved === 'dark' || saved === 'light'){
+        if(saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        var hour = new Date().getHours();
+        if(hour >= 19 || hour < 6) document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch(e){}
+  })();
+</script>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ============================================================
      WELCOME POPUP MODAL (User Attraction)
@@ -95,12 +142,18 @@
     <a href="#payment" class="nav-link i18n" data-en="Advance Payment" data-hi="एडवांस पेमेंट">Advance Payment</a>
     <a href="#location" class="nav-link i18n" data-en="Location" data-hi="स्थान">Location</a>
     <a href="#mill" class="nav-link i18n" data-en="About the Mill" data-hi="मिल के बारे में">About the Mill</a>
-    <a href="#developer" class="nav-link i18n" data-en="Meet the Developer" data-hi="डेवलपर से मिलें">Meet the Developer</a>
     <a href="#contact" class="nav-cta i18n" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a>
     <div class="lang-toggle" role="group" aria-label="Choose language">
       <button type="button" class="lang-btn active" data-lang-btn="en" onclick="setLanguage('en')">EN</button>
       <button type="button" class="lang-btn" data-lang-btn="hi" onclick="setLanguage('hi')">हिं</button>
     </div>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Change theme" title="Change theme">
+      <svg class="theme-ic-light" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="theme-ic-dark" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5Z"/></svg>
+    </button>
+    <a class="dev-icon-link" href="https://my-portfolio-ebon-three-80.vercel.app/" target="_blank" rel="noopener" aria-label="Developer Portfolio" title="Developer Portfolio">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    </a>
   </nav>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -114,18 +167,24 @@
   <a href="#payment" class="nav-link i18n" data-en="Advance Payment" data-hi="एडवांस पेमेंट">Advance Payment</a>
   <a href="#location" class="nav-link i18n" data-en="Location" data-hi="स्थान">Location</a>
   <a href="#mill" class="nav-link i18n" data-en="About the Mill" data-hi="मिल के बारे में">About the Mill</a>
-  <a href="#developer" class="nav-link i18n" data-en="Meet the Developer" data-hi="डेवलपर से मिलें">Meet the Developer</a>
   <a href="#contact" class="i18n" data-en="Order Now" data-hi="ऑर्डर करें">Order Now</a>
   <div class="lang-toggle mobile" role="group" aria-label="Choose language">
     <button type="button" class="lang-btn active" data-lang-btn="en" onclick="setLanguage('en')">English</button>
     <button type="button" class="lang-btn" data-lang-btn="hi" onclick="setLanguage('hi')">हिंदी</button>
   </div>
+  <a class="dev-icon-link mobile" href="https://my-portfolio-ebon-three-80.vercel.app/" target="_blank" rel="noopener" aria-label="Developer Portfolio">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <span>Developer Portfolio</span>
+  </a>
 </div>
 
 <main id="top">
 
   <!-- HERO SECTION -->
   <section class="hero">
+    <div class="hero-particles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
     <div class="hero-text reveal-in">
       <p class="eyebrow i18n" data-en="Trusted Mustard Oil Merchants — Bigrau, Siyana, Bulandshahr" data-hi="भरोसेमंद सरसों तेल व्यापारी — बिगराउ, सियाना, बुलंदशहर">Trusted Mustard Oil Merchants — Bigrau, Siyana, Bulandshahr</p>
       <h1 class="i18n" data-en="Pure Mustard Oil, Khal, Rice &amp; Seed Trading" data-hi="शुद्ध सरसों का तेल, खल, चावल और अनाज व्यापार">Pure Mustard Oil, Khal, Rice &amp; Seed Trading</h1>
@@ -617,12 +676,67 @@
     </div>
   </section>
 
-  <!-- ABOUT THE DEVELOPER SECTION -->
-  <section class="section developer-section scroll-spy-target" id="developer">
-    <div class="developer-card reveal compact">
-      <p class="eyebrow i18n" data-en="Website Credit" data-hi="वेबसाइट क्रेडिट">Website Credit</p>
-      <h2 class="i18n" data-en="Built by Praveen Kumar" data-hi="प्रवीण कुमार द्वारा निर्मित">Built by Praveen Kumar</h2>
-      <a href="https://my-portfolio-ebon-three-80.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary i18n" data-en="View Portfolio" data-hi="पोर्टफोलियो देखें">View Portfolio</a>
+  <!-- FAQ SECTION -->
+  <section class="section faq-section scroll-spy-target" id="faq">
+    <p class="eyebrow i18n" data-en="Common Questions" data-hi="सामान्य सवाल">Common Questions</p>
+    <h2 class="i18n" data-en="Frequently Asked Questions" data-hi="अक्सर पूछे जाने वाले सवाल">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal open">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
+          <span class="i18n" data-en="Is your mustard oil 100% pure?" data-hi="क्या आपका सरसों का तेल 100% शुद्ध है?">Is your mustard oil 100% pure?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="i18n"
+            data-en="Yes. Our oil is cold-pressed with zero chemicals or blending — just mustard seed, pressed fresh. Every batch is the same purity we'd serve our own family."
+            data-hi="हां। हमारा तेल बिना किसी केमिकल या मिलावट के कोल्ड-प्रेस्ड होता है — सिर्फ सरसों के बीज, ताज़ा पिसे हुए। हर बैच वही शुद्धता है जो हम अपने परिवार को देते हैं।">
+            Yes. Our oil is cold-pressed with zero chemicals or blending — just mustard seed, pressed fresh. Every batch is the same purity we'd serve our own family.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
+          <span class="i18n" data-en="Do you deliver outside Bulandshahr district?" data-hi="क्या आप बुलंदशहर जिले के बाहर डिलीवरी करते हैं?">Do you deliver outside Bulandshahr district?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="i18n"
+            data-en="Right now we deliver locally within Bulandshahr district. For bulk/wholesale orders from further away, message us on WhatsApp and we'll see what's possible."
+            data-hi="अभी हम सिर्फ बुलंदशहर जिले में ही डिलीवरी करते हैं। दूर से थोक ऑर्डर के लिए व्हाट्सएप पर संपर्क करें, हम कोशिश करेंगे।">
+            Right now we deliver locally within Bulandshahr district. For bulk/wholesale orders from further away, message us on WhatsApp and we'll see what's possible.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
+          <span class="i18n" data-en="What payment methods do you accept?" data-hi="आप कौन से भुगतान तरीके स्वीकार करते हैं?">What payment methods do you accept?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="i18n"
+            data-en="Cash on delivery, UPI, and advance payment via the QR code in the Advance Payment section above — your choice."
+            data-hi="कैश ऑन डिलीवरी, UPI, और ऊपर दिए गए Advance Payment सेक्शन में QR कोड से एडवांस पेमेंट — आपकी मर्ज़ी।">
+            Cash on delivery, UPI, and advance payment via the QR code in the Advance Payment section above — your choice.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
+          <span class="i18n" data-en="Can I get my own mustard seed pressed into oil (Pilai)?" data-hi="क्या मैं अपना सरसों पिसवा सकता हूं (पिलाई)?">Can I get my own mustard seed pressed into oil (Pilai)?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p class="i18n"
+            data-en="Yes — bring your own seed and we'll press it for you. See the Custom Oil Pressing section above for details."
+            data-hi="हां — अपना सरसों लाएं और हम उसे पिसवा देंगे। ऊपर Custom Oil Pressing सेक्शन में पूरी जानकारी है।">
+            Yes — bring your own seed and we'll press it for you. See the Custom Oil Pressing section above for details.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -660,35 +774,6 @@
           </div>
         </div>
 
-        <div class="contact-persona developer reveal">
-          <div class="persona-avatar dev">PK</div>
-          <div class="persona-info">
-            <span class="persona-role i18n" data-en="Website Developer" data-hi="वेबसाइट डेवलपर">Website Developer</span>
-            <strong class="persona-name">Praveen Kumar</strong>
-            <a class="detail-row" href="mailto:praveenkumarlodhi001@gmail.com">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
-              praveenkumarlodhi001@gmail.com
-            </a>
-            <a class="detail-row wa-link" href="https://wa.me/917830469154?text=Hi%20Praveen%2C%20I%27d%20like%20to%20discuss%20a%20website%20%2F%20app%20project."
-               target="_blank" rel="noopener"
-               data-wa-phone="917830469154"
-               data-wa-en="Hi Praveen, I'd like to discuss a website / app project."
-               data-wa-hi="नमस्ते प्रवीण, मुझे वेबसाइट/ऐप प्रोजेक्ट के बारे में बात करनी है।">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-              +91 78304 69154
-            </a>
-            <a class="detail-row" href="https://my-portfolio-ebon-three-80.vercel.app/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              <span class="i18n" data-en="View Portfolio" data-hi="पोर्टफोलियो देखें">View Portfolio</span>
-            </a>
-            <p class="detail-note i18n"
-              data-en="For website, mobile app, or software project enquiries only."
-              data-hi="केवल वेबसाइट, ऐप या सॉफ्टवेयर प्रोजेक्ट से जुड़े सवालों के लिए।">
-              For website, mobile app, or software project enquiries only.
-            </p>
-          </div>
-        </div>
-
       </div>
 
       <form class="contact-form reveal" id="contactForm" onsubmit="handleContactSubmit(event, this)">
@@ -707,7 +792,6 @@
           <option value="rice_polish" class="i18n" data-en="Rice Polish" data-hi="चावल पॉलिश">Rice Polish</option>
           <option value="rice_husk" class="i18n" data-en="Rice Chuukar / Husk" data-hi="चावल का चूकर/भूसी">Rice Chuukar / Husk</option>
           <option value="pilai" class="i18n" data-en="Custom Oil Pressing" data-hi="अपना अनाज पिसवाना">Custom Oil Pressing</option>
-          <option value="web" class="i18n" data-en="Hire for Website / Tech Project" data-hi="वेबसाइट के लिए संपर्क">Hire for Website / Tech Project</option>
         </select>
         <p class="routing-hint" id="routingHint" hidden></p>
         <textarea name="message" rows="3" required
@@ -725,9 +809,9 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <p class="i18n"
-    data-en="&copy; 2026 Apna Oil Mill, Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP. Website by Praveen Kumar."
-    data-hi="&copy; 2026 अपना ऑयल मिल, भगवंत सिंह इंटर कॉलेज के पास, बिगराउ, सियाना, बुलंदशहर, उत्तर प्रदेश। वेबसाइट: प्रवीण कुमार।">
-    &copy; 2026 Apna Oil Mill, Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP. Website by Praveen Kumar.
+    data-en="&copy; 2026 Apna Oil Mill, Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP."
+    data-hi="&copy; 2026 अपना ऑयल मिल, भगवंत सिंह इंटर कॉलेज के पास, बिगराउ, सियाना, बुलंदशहर, उत्तर प्रदेश।">
+    &copy; 2026 Apna Oil Mill, Near Bhagwant Singh Inter College, Bigrau, Siyana, Bulandshahr, UP.
   </p>
 </footer>
 
@@ -802,6 +886,24 @@
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.13c-.22.62-1.28 1.19-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.86-.27-1.48-.53-2.6-1.12-4.3-3.74-4.43-3.92-.13-.18-1.06-1.41-1.06-2.69 0-1.28.67-1.91.9-2.17.22-.26.5-.32.67-.32.16 0 .33 0 .47.01.15.01.36-.06.56.43.22.53.74 1.83.8 1.96.06.13.1.29.02.47-.08.18-.13.29-.25.44-.13.16-.27.35-.38.47-.13.13-.26.27-.11.53.15.26.67 1.1 1.44 1.78 1 .88 1.83 1.16 2.09 1.29.26.13.42.11.57-.06.16-.18.66-.76.83-1.02.18-.26.35-.22.6-.13.24.09 1.55.73 1.82.86.26.13.44.19.5.3.06.13.06.71-.16 1.33z"/></svg>
 </a>
 
+<!-- Floating Call Now button -->
+<a href="tel:+919456603818" class="call-float" aria-label="Call Apna Oil Mill" title="Call Now">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<!-- Scroll to top button -->
+<button type="button" class="scroll-top-fab" id="scrollTopFab" aria-label="Scroll to top" title="Top" hidden>
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- Gallery Lightbox -->
+<div class="lightbox" id="lightbox" hidden onclick="if(event.target===this) closeLightbox()">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <button type="button" class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)" aria-label="Previous">&#10094;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button type="button" class="lightbox-nav lightbox-next" onclick="navLightbox(1)" aria-label="Next">&#10095;</button>
+</div>
+
 <script>
   let welcomeClosed = false;
   let exitTriggered = false;
@@ -821,6 +923,7 @@
     document.getElementById('welcomePopup').hidden = true;
     try { localStorage.setItem('welcomed_apna_oil', 'true'); } catch(e) {}
     welcomeClosed = true;
+    playIntroChime();
   }
 
   function closeThankyouPopup() {
@@ -886,7 +989,21 @@
   }));
 
   const OWNER_PHONE = '919456603818';
-  const DEV_PHONE = '917830469154';
+
+  /* ---------- Theme toggle ---------- */
+  (function(){
+    const btn = document.getElementById('themeToggle');
+    if(!btn) return;
+    function apply(theme){
+      if(theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      else document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('apnaOilTheme', theme); } catch(e){}
+    }
+    btn.addEventListener('click', function(){
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      apply(isDark ? 'light' : 'dark');
+    });
+  })();
 
   function currentLang(){
     return document.getElementById('htmlRoot').lang === 'hi' ? 'hi' : 'en';
@@ -897,10 +1014,7 @@
     if(!hint) return;
     const lang = currentLang();
     if(!select.value){ hint.hidden = true; return; }
-    const isWeb = select.value === 'web';
-    const text = isWeb
-      ? (lang === 'hi' ? '↳ यह संदेश डेवलपर (प्रवीण कुमार) के व्हाट्सएप पर जाएगा।' : '↳ This will open WhatsApp with the Developer (Praveen Kumar).')
-      : (lang === 'hi' ? '↳ यह संदेश मिल मालिक (श्री किरणपाल सिंह) के व्हाट्सएप पर जाएगा।' : '↳ This will open WhatsApp with the Mill Owner (Mr. Kiranpal Singh).');
+    const text = lang === 'hi' ? '↳ यह संदेश मिल मालिक (श्री किरणपाल सिंह) के व्हाट्सएप पर जाएगा।' : '↳ This will open WhatsApp with the Mill Owner (Mr. Kiranpal Singh).';
     hint.textContent = text;
     hint.hidden = false;
     hint.classList.remove('pop-in');
@@ -917,8 +1031,7 @@
     const opt = select.options[select.selectedIndex];
     const needLabel = (opt && opt.dataset[lang]) || (opt ? opt.textContent : '');
     const details = form.querySelector('[name="message"]').value.trim();
-    const isWeb = select.value === 'web';
-    const targetPhone = isWeb ? DEV_PHONE : OWNER_PHONE;
+    const targetPhone = OWNER_PHONE;
 
     const message = lang === 'hi'
       ? `नई पूछताछ (वेबसाइट से):\nनाम: ${name}\nफोन: ${phone}\nज़रूरत: ${needLabel}\nविवरण: ${details}`
@@ -926,9 +1039,7 @@
 
     window.open('https://wa.me/' + targetPhone + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
 
-    const targetName = isWeb
-      ? (lang === 'hi' ? 'डेवलपर (प्रवीण कुमार)' : 'the Developer (Praveen Kumar)')
-      : (lang === 'hi' ? 'मिल मालिक (श्री किरणपाल सिंह)' : 'the Mill Owner (Mr. Kiranpal Singh)');
+    const targetName = lang === 'hi' ? 'मिल मालिक (श्री किरणपाल सिंह)' : 'the Mill Owner (Mr. Kiranpal Singh)';
     const successEl = document.getElementById('formSuccess');
     successEl.textContent = lang === 'hi'
       ? `व्हाट्सएप खुल रहा है — ${targetName} तक पहुँचने के लिए वहाँ "भेजें" दबाएं।`
@@ -1267,6 +1378,41 @@
   });
 
   /* ============================================================
+     INTRO WELCOME CHIME (original, copyright-free)
+     A short bell-like jingle that plays once when the visitor
+     closes the welcome popup — separate from the looping
+     background music below.
+  ============================================================ */
+  function playIntroChime(){
+    try {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if(!Ctx) return;
+      const ctx = new Ctx();
+      const notes = [523.25, 659.25, 783.99, 1046.50]; // C5 E5 G5 C6 — bright arpeggio
+      const now = ctx.currentTime;
+      const master = ctx.createGain();
+      master.gain.value = 0.22;
+      master.connect(ctx.destination);
+      notes.forEach((freq, i) => {
+        const t0 = now + i * 0.11;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0, t0);
+        gain.gain.linearRampToValueAtTime(1, t0 + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.9);
+        osc.connect(gain);
+        gain.connect(master);
+        osc.start(t0);
+        osc.stop(t0 + 1);
+      });
+      setTimeout(() => ctx.close(), 1600);
+    } catch(e){ /* silently ignore */ }
+  }
+
+
+  /* ============================================================
      BACKGROUND MUSIC (copyright-free)
      - If you add a file at audio/bgm.mp3 it plays that.
      - Otherwise it plays an original ambient tune generated live
@@ -1274,7 +1420,7 @@
      Set BGM_FILE = '' to always use the built-in tune.
   ============================================================ */
   const BGM_FILE = 'audio/bgm.mp3';
-  const BGM_VOLUME = 0.35;               // 0 (silent) to 1 (full)
+  const BGM_VOLUME = 0.26;               // 0 (silent) to 1 (full) — kept gentle/calm
   const MUSIC_KEY = 'apnaOilMusic';
 
   const MUSIC_TEXT = {
@@ -1342,9 +1488,9 @@
       // soft echo for a spacious feel
       bus = ctx.createGain();
       bus.connect(master);
-      const delay = ctx.createDelay(1.5); delay.delayTime.value = 0.45;
-      const fb = ctx.createGain(); fb.gain.value = 0.4;
-      const wet = ctx.createGain(); wet.gain.value = 0.35;
+      const delay = ctx.createDelay(1.5); delay.delayTime.value = 0.62;
+      const fb = ctx.createGain(); fb.gain.value = 0.44;
+      const wet = ctx.createGain(); wet.gain.value = 0.42;
       bus.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(master);
 
       // steady drone (Sa + Pa)
@@ -1379,16 +1525,16 @@
       while(nextPluck < horizon){
         const f = PLUCK[pluckI % PLUCK.length];
         pluckI++;
-        if(f) voice(f, nextPluck, 0.2, 2.6, 'triangle', 1800, 0.006);
-        nextPluck += f ? 0.9 : 1.6;
+        if(f) voice(f, nextPluck, 0.14, 3.4, 'triangle', 1400, 0.02);
+        nextPluck += f ? 1.5 : 2.4;
       }
       while(nextNote < horizon){
-        if(Math.random() < 0.22){ nextNote += 0.9; continue; }
+        if(Math.random() < 0.3){ nextNote += 1.3; continue; }
         noteI = Math.max(0, Math.min(SCALE.length - 1, noteI + [-2, -1, -1, 0, 1, 1, 2][Math.floor(Math.random() * 7)]));
-        const dur = 1.4 + Math.random() * 1.4;
-        voice(SCALE[noteI], nextNote, 0.16, dur, 'sine', 2400, 0.04);
-        voice(SCALE[noteI] * 2, nextNote, 0.03, dur * 0.6, 'sine', 3000, 0.04);
-        nextNote += [0.9, 1.2, 1.8][Math.floor(Math.random() * 3)];
+        const dur = 2.2 + Math.random() * 1.8;
+        voice(SCALE[noteI], nextNote, 0.12, dur, 'sine', 1800, 0.18);
+        voice(SCALE[noteI] * 2, nextNote, 0.02, dur * 0.6, 'sine', 2200, 0.18);
+        nextNote += [1.6, 2.0, 2.6][Math.floor(Math.random() * 3)];
       }
     }
 
@@ -1587,9 +1733,71 @@
   })();
 
   const siteHeader = document.getElementById('siteHeader');
+  const scrollProgressEl = document.getElementById('scrollProgress');
+  const scrollTopFab = document.getElementById('scrollTopFab');
   window.addEventListener('scroll', () => {
     siteHeader.classList.toggle('scrolled', window.scrollY > 24);
+    if(scrollProgressEl){
+      const h = document.documentElement;
+      const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      scrollProgressEl.style.width = pct + '%';
+    }
+    if(scrollTopFab){ scrollTopFab.hidden = window.scrollY < 500; }
   }, { passive: true });
+
+  if(scrollTopFab){
+    scrollTopFab.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  /* ---------- Gallery lightbox ---------- */
+  let lightboxImages = [];
+  let lightboxIndex = 0;
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = Array.from(document.querySelectorAll('.gallery-item img'));
+    lightboxImages = items.map(img => ({ src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' }));
+    items.forEach((img, i) => {
+      img.closest('.gallery-item').style.cursor = 'zoom-in';
+      img.closest('.gallery-item').addEventListener('click', () => openLightbox(i));
+    });
+  });
+
+  function openLightbox(i){
+    lightboxIndex = i;
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    lbImg.src = lightboxImages[i].src;
+    lbImg.alt = lightboxImages[i].alt;
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    document.getElementById('lightbox').hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  function navLightbox(dir){
+    lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+    const lbImg = document.getElementById('lightboxImg');
+    lbImg.src = lightboxImages[lightboxIndex].src;
+    lbImg.alt = lightboxImages[lightboxIndex].alt;
+  }
+
+  document.addEventListener('keydown', (e) => {
+    const lb = document.getElementById('lightbox');
+    if(!lb || lb.hidden) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') navLightbox(-1);
+    if(e.key === 'ArrowRight') navLightbox(1);
+  });
+
+  /* ---------- FAQ accordion ---------- */
+  function toggleFaq(btn){
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  }
 
   const revealEls = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
